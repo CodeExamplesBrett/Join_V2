@@ -29,6 +29,12 @@
 
 <body onload="showOverview()">
     <div w3-include-html="./html_templates/menu.html"></div>
+
+    <div class="heading">
+        <h1 class="head-text">Board</h1>
+        <span class="head-text-small">Learning Management Systems Project</span>
+    </div>
+
     <div class="main columns">
         <div class="category" ondrop="moveTo('todo'); removeHighlight('todo-content')"
             ondragover="allowDrop(event); highlight('todo-content')" ondragleave="removeHighlight('todo-content')"

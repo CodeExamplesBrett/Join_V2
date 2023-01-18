@@ -1,3 +1,27 @@
+.main{
+  margin-right: 40px;
+  margin-top: 22px !important;
+}
+
+.heading{
+  margin-bottom: 40px;
+  margin-top: 22px;
+  margin-left: 218px;
+}
+
+.head-text{
+  margin: 0;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.head-text-small{
+  color: #2c2ca8;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 :root{
   --color-high:red;
   --color-medium: yellow;

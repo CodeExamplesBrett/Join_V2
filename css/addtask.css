@@ -102,6 +102,8 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .closeFrame{
     display: flex;
