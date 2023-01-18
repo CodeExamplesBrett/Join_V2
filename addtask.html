@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Join icon -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+
+    <!--  link google fonts Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap"
+        rel="stylesheet">
+
+    <!-- Add Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./js/mini_backend.js"></script>
+    <script src="./js/add_Task.js"></script>
+    <!--<script src="./js/task.js"></script> -->
+    <script src="./js/main.js"></script>
+    <script src="./js/template.js"></script>
+
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/addtask.css">
+    <title>Join</title>
+</head>
+
+<!-- init() -- parameter is the div id to which the class "board-menu-highlight", -->
+<body onload="init()">
+    <!--Include menu div-->
+    <div w3-include-html="./html_templates/menu.html"></div>
+    <!--Main div with margin from menu and top-->
+    <div class="main">
+        <div class="heading">
+            <h1 class="head-text">Add Task</h1>
+            <span class="head-text-small">Learning Management Systems Project</span>
+        </div>
+        <!--From component of page-->
+        <form onsubmit="addTask(event)">
+            <div class="input-main">
+
+                <!--Left side of form -->
+                <div class="input-left">
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">TITLE*</label>
+                        <input type="text" required class="form-control title" id="title" placeholder="Enter title for task">
+                    </div>
+
+                    <label for="category" class="form-label">CATEGORY*</label>
+                    <select required class="form-select" id="category" aria-label="Default select example">
+                        <option value="marketing">marketing</option>
+                        <option value="design">design</option>
+                        <option value="sales">sales</option>
+                    </select>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label label-margin">DESCRIPTION*</label>
+                        <textarea required class="form-control" id="description" rows="3"></textarea>
+                    </div>
+                    
+
+
+                </div>
+                <!--Right side of form-->
+                <div class="input-right">
+                    <label for="due-date" class="form-label">DUE DATE*</label>
+
+                    <input type="date" class="form-control mb-3" required aria-describedby="due-date-button"
+                        id="due-date">
+
+                    <label for="urgency" class="form-label ">URGENCY*</label>
+                    <select required class="form-select" id="urgency" aria-label="Default select example">
+                        <option value="high">high</option>
+                        <option value="medium">medium</option>
+                        <option value="low">low</option>
+                    </select>
+
+                    <label class="form-label label-margin">ASSIGN TO</label>
+                    <div class=" input-right-bottom">
+
+                        
+                            <div class="avatar-plus">
+                                <div id="user-img">
+
+                                </div>
+                                <!-- bootstrap svg -- class added for hover effects-->
+                                <svg xmlns="http://www.w3.org/2000/svg" onclick="showUser()" id="plus-svg" width="25" height="25"
+                                    fill="currentColor" class="bi bi-plus-circle plus-svg" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z">
+                                    </path>
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z">
+                                    </path>
+                                </svg>
+                            </div>
+                            
+
+                        
+                        <!--Div for buttons-->
+                        
+                        <div class="submit-area">
+                            <button type="reset" class="btn btn-outline-primary"
+                                onclick="resetFormObjects()">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Create Task</button>
+                            <div class="noUserSelected" id="noUserSelected"></div>
+
+                        </div>
+                        
+                    </div>
+                    <div id="confirm-text" class="confirm-text"></div>
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <div id="bg-grey" class="bg-grey d-none" onclick="closeUserDialog()">
+        <div class="container-outer">
+            <div class="closeFrame">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div id="user-container" class="user-container" onclick="event.stopPropagation()"></div>
+
+        </div>
+    </div>
+</body>
+
+</html>

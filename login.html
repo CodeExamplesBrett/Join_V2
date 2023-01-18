@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./js/mini_backend.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/login.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="init('addTask-link'); loginSuccess()"> 
+    <h1>Login</h1>
+
+    <form onsubmit="login(event); return false;">
+        <label for="title" class="form-label">Email*</label>
+        <input type="text" id="email">
+
+        <label for="title" class="form-label">PW*</label>
+        <input type="text" id="password">
+
+        <button type="submit">Login</button>
+    
+    </form>
+
+    <div id='msgBox'>
+        
+    </div>
+    
+</body>
+</html>

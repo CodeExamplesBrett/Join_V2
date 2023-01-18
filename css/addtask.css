@@ -1,0 +1,198 @@
+body {
+    line-height: inherit;
+}
+
+.head-text{
+    margin: 0;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    font-size: 35px;
+}
+.head-text-small{
+    color: #2c2ca8;
+    font-size: 16px;
+    font-weight: 500;
+}
+.heading{
+    margin-bottom: 40px;
+}
+.main{
+    margin-right: 40px;
+    margin-top: 22px !important;
+}
+.input-main{
+    display: flex;
+    background-color: rgba(28, 68, 212, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 1000px; 
+}
+.input-left{
+    width: 50%;
+}
+.input-right{
+    margin-left: 20px;
+    width: 50%;
+}
+.form-label{
+    color: blue;
+    font-weight: bold;
+}
+.label-margin{
+    margin-top: 20px;
+}
+.avatar{
+    width: 55px;
+    height: 55px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    align-items: center;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.plus-svg{
+    opacity: 60%;
+    
+}
+
+.plus-svg-middle{
+    opacity: 60%;
+    margin-top: -21px;
+}
+
+
+.plus-svg:hover {
+    fill: blue;
+    cursor: pointer;
+    opacity: 100%;
+}
+.btn-outline-primary{
+    margin-right: 8px;
+}
+
+.bg-grey{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 4;
+}
+.d-none {
+    display: none;
+}
+.user-container {
+    z-index: 5;
+    background-color: #D2DAF6;
+    border-radius: 10px;
+    padding: 20px;
+}
+.container-outer {
+    position: relative;
+    top: 20%;
+    height: 350px;
+    width: 500px;
+    z-index: 5;
+    background-color: #D2DAF6;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.closeFrame{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+}
+.userName{
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.individualUser{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+}
+.userDetails{
+    display: flex;
+    flex-direction: column;
+}
+.user-show-box{
+    display: flex;
+}
+.individualUser :hover{
+    color: rgba(40, 86, 185, 0.5);
+    
+}
+.addUser{
+    resize: none;
+}
+.avatar-plus{
+    display: flex;
+    align-items: center;
+}
+.svg-check{
+    fill: rgb(32, 90, 14);
+    margin-left: 50px;
+}
+.userWarning{
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.Exclaim{
+    margin-right: 5px;
+}
+.submit-area{
+    margin-top: 20px
+}
+.confirm-text{
+    color: rgb(77, 150, 54);
+    font-weight: bold;
+    margin-top: 20px;
+}
+#user-img{
+    display: flex;
+    align-items: center;
+}
+.added-user{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+
+@media(max-width: 870px) {
+    .input-main{
+        flex-direction: column;
+    }
+    .input-right{
+        margin-left: 0;
+        width: 100%;
+    }
+    .input-left{
+        width: 100%;
+    }
+    .head-text{
+        margin-top: 146px;
+    }
+    .main{
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+    }
+    .heading{
+        margin-bottom: 10px;
+    }
+    
+ }
+
+
+
+
+

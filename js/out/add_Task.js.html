@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: add_Task.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: add_Task.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*[
+    {
+        title : 'Test',
+        date : 12355436542514,
+        status : 'backlog', // backlog, todo, in progress, testing, done
+        category : 'marketing', // marketing, design, production, sales
+        urgency : 'low', // low (green), medium (yellow), high (red)
+        description : 'Beschreibung des Tests.',
+        user : [{
+            name: 'Kai',
+            img : 'url',
+            mail : '',
+        },{
+            name: 'Brett',
+            img : 'url',
+            mail : '',
+        },]
+    }
+]; */
+
+
+
+
+
+
+
+/* [
+    {
+        name: 'Kai',
+        img : 'url',
+        mail : '',
+        password : '',
+    },{
+        name: 'Brett',
+        img : 'url',
+        mail : '',
+        password : '',
+    },{
+        name: 'Amar',
+        img : 'url',
+        mail : '',
+        password : '',
+    }
+];  */
+/*
+let tasks = [
+    {
+       "title":"Test",
+       "date":12355436542514,
+       "status":"backlog",
+       "category":"marketing",
+       "urgency":"low",
+       "description":"Beschreibung des Tests.",
+       "user":[
+          {
+             "name":"Kai",
+             "img":"url",
+             "mail":""
+          },
+          {
+             "name":"Brett",
+             "img":"url",
+             "mail":""
+          }
+       ]
+    }
+ ];  */
+
+let users = [
+    {
+       "name":"Kai",
+       "img":"url",
+       "mail":"",
+       "password":""
+    },
+    {
+       "name":"Brett",
+       "img":"url",
+       "mail":"",
+       "password":""
+    },
+    {
+       "name":"Amar",
+       "img":"url",
+       "mail":"",
+       "password":""
+    }
+ ]
+
+
+ // Define Array for all tasks
+allTasks = [];
+
+// jsdoc: npm install -g jsdoc
+
+/**
+ * This function reads input data from addTasks form
+ * 
+ * @param {string} event - on event here summit button click the default funtcion of the form is prevented so that processes in console can be seen and the page is not automatically reloaded.
+ */
+ function addTask(event) {
+     // function to prevent the default function of form being carried out
+    event.preventDefault();
+    
+    // Variables for form objects to be saved in JSON
+     let title = document.getElementById('title');
+     let category = document.getElementById('category');
+     let description = document.getElementById('description');
+     let date = document.getElementById('due-date');
+     let urgency = document.getElementById('urgency');
+    //  let user = document.getElementById('assign');
+
+     createJsonArrayForTask(title, category, description, date, urgency);       
+     resetFormObjects(title, category, description, date, urgency);       
+     arraySaveToLocalStorage();
+ }
+
+/**
+ * This function creates a JSON for the form inputs and pushes this JSON into array "allTasks"
+ * 
+ * @param {string} title - task name
+ * @param {string} category - task category
+ * @param {string} description - task description
+ * @param {string} date - due date as string
+ * @param {string} urgency task urgency
+ */
+ function createJsonArrayForTask(title, category, description, date, urgency) {
+    // Variables saved as JSON , with .value the value of the form object is returned (writen this way so that the form can then be reset).
+    let task = {
+        'title': title.value,
+        'category': category.value,
+        'description' : description.value,
+        'date': date.value,
+        'urgency' : urgency.value,
+        'status' : 'backlog'
+           };
+    // Push JSON to array "allTasks"
+    allTasks.push(task); 
+    
+    console.log('array', allTasks)
+}  
+ 
+/**
+ * This function resets all inputs in addTask form
+ * 
+ * @param {string} title - task name
+ * @param {string} category - task category
+ * @param {string} description - task description
+ * @param {string} date - due date as string
+ * @param {string} urgency task urgency
+ */
+function resetFormObjects(title, category, description, date, urgency) {
+    // Reset form objects
+    title.value = '';
+    category.value = '';
+    description.value = '';
+    date.value = '';
+    urgency.value = '';
+
+}    
+
+/**
+ * This function converts JSON-array to string then saves to local storage
+ */
+function arraySaveToLocalStorage() {
+    // Json array to string then saved in local storage)
+     let allTasksAsString = JSON.stringify(allTasks);
+     localStorage.setItem('allTasks', allTasksAsString);
+}
+
+/**
+ *  This function reads JSON array as a string from localstorage on page load. Function call in html body "onload"
+ *  string is then parsed into JSON array and our allTasks array is overwriten with this array on load.
+ */    
+function loadAllTasks() {
+    
+    let allTasksAsString = localStorage.getItem('allTasks');
+    allTasks = JSON.parse(allTasksAsString);
+
+    console.log('loaded all Tasks', allTasks);
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addTask">addTask</a></li><li><a href="global.html#arraySaveToLocalStorage">arraySaveToLocalStorage</a></li><li><a href="global.html#createJsonArrayForTask">createJsonArrayForTask</a></li><li><a href="global.html#loadAllTasks">loadAllTasks</a></li><li><a href="global.html#resetFormObjects">resetFormObjects</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon May 16 2022 21:35:39 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
