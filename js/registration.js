@@ -9,7 +9,7 @@ function addUser(event){
     //console.log(email);
     //console.log(password)
 
-    users.push({email: email.value, password: password.value, name: name.value});
+    users.push({email: email.value, password: password.value, name: name.value, img: './img/avatar.png'});
     setArray("user", users);
     console.log(tasks);
 

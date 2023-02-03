@@ -21,6 +21,7 @@
     <script src="./js/mini_backend.js"></script>  
     <script src="./js/main.js"></script>
     <script src="./js/template.js"></script>  
+    <script src="./js/summary.js"></script>  
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +30,7 @@
     <link rel="stylesheet" href="./css/summary.css">
     <title>Join</title>
 </head>
-<body onload="init()">
+<body onload="getStats()">
     <!--Include menu div-->
     <div w3-include-html="./html_templates/menu.html"></div>
     <!--Main div with margin from menu and top-->
@@ -42,7 +43,7 @@
         <div class="left-con">
             <div class="row">
                 <div class="task-nr" id="Task-tot">
-                    <span class="count">5</span>
+                    <span id="count" class="count"></span>
                     <span class="count-descr">Tasks on<br>Board</span>
                     
 
