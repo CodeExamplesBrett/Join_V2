@@ -10,6 +10,7 @@ async function init(currentLink) {
 
   await includeHTML();
   //menuSelected(currentLink);
+  displayCurrentDate()
 }
 
 async function includeHTML() {
@@ -36,8 +37,25 @@ function myFunction() {
   }
 }
 
+
 function menuSelected(currentLink) {
   document.getElementById(currentLink).classList.add("board-menu-highlight");
+}
+
+
+function displayCurrentDate(){
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+  const yyyy = today.getFullYear();
+
+  dateArea = document.getElementById("due-date");
+  // only add current date to element "due-date" if it exists
+  if(dateArea){
+    dateArea.value = yyyy + '-' + mm + '-' + dd;
+  }
+
+  
 }
 
 

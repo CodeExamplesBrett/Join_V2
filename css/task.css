@@ -5,15 +5,15 @@
 
 .heading{
   margin-bottom: 40px;
-  margin-top: 22px;
-  margin-left: 218px;
+  margin-top: 180px;
+  margin-left: 40px;
 }
 
-.head-text{
+h1{
   margin: 0;
-  color: rgba(0, 0, 0, 0.7);
+  color: black;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 61px;
 }
 
 .head-text-small{
@@ -26,6 +26,8 @@
   --color-high:red;
   --color-medium: yellow;
   --color-low:green;
+  --color-marketing: blue;
+  --color-design: #FF7A00;
 }
 
 .columns {
@@ -65,6 +67,13 @@ h3 {
   align-items: flex-start;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.group-title{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 25px;
 }
 
 .color-field {

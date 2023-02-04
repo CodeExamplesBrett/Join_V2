@@ -71,7 +71,7 @@ function createTaskJSON(title, category, description, date, urgency){
     description: description.value,
     date: date.value,
     urgency: urgency.value,
-    status: "backlog",
+    status: "todo",
     // selected users from array "selectUser"
     user: selectUser
   };
@@ -139,12 +139,11 @@ function showUser() {
   for (let i = 0; i < users.length; i++) {
     let userName = users[i]["name"];
     let userImg = users[i]["img"];
-    let userMail = users[i]["mail"];
 
     //add data to dialogbox
     document.getElementById("user-container").innerHTML += 
     // This function added the HTML.... function in template.js
-    addUserDataToDialogbox(i, userName, userImg, userMail)
+    addUserDataToDialogbox(i, userName, userImg)
   }
   showCheckUp();
 }

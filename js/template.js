@@ -5,7 +5,7 @@ function cardHTML(tasks, i) {
             <div class="color-field" style="background-color:var(--color-${
               tasks.urgency
             })"></div>
-            <div>${tasks.category.toUpperCase()}</div>
+            <div style="background-color:var(--color-${tasks.category})">${tasks.category.toUpperCase()} </div>
         </div>
         <h4 class="task-h4">${tasks.title}</h4>
          <p class="task-description">${tasks.description}</p>
@@ -135,7 +135,7 @@ function overlayTaskHTML(i) {
 }
 
 // From addTasks.js  ... showUser function
-function addUserDataToDialogbox(i, userName, userImg, userMail){
+function addUserDataToDialogbox(i, userName, userImg){
     return /*html*/ `
     <!-- <div class="individualUser" onclick="addUser(${i}, '${userName}')"> -->
     <div class="individualUser" onclick="addUser(${i})">
@@ -143,7 +143,6 @@ function addUserDataToDialogbox(i, userName, userImg, userMail){
           <img class="avatar" src="${userImg}">
           <div class="userDetails">
             <span class="userName">${userName}</span>
-            <span class="userName">${userMail}</span>
          </div>
         </div>
         

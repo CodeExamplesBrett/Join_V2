@@ -2,6 +2,50 @@ body {
     line-height: inherit;
 }
 
+h1{
+    font-size: 61px;
+    font-weight: 700;
+}
+
+input{
+    height: 51px;
+    padding: 13px 21px;
+    font-size: 22px;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+    margin-bottom: 30px;
+    color: #757D90;
+    font-family: 'Roboto', sans-serif;
+}
+
+textarea{
+    margin-bottom: 34px;
+    height: 90px;
+    padding: 18px 21px;
+    font-size: 22px;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+    color: #757D90;
+    font-family: 'Roboto', sans-serif;
+}
+
+select{
+    margin-bottom: 34px;
+    height: 90px;
+    padding: 18px 21px;
+    font-size: 22px;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+    color: #757D90;
+    font-family: 'Roboto', sans-serif;
+}
+
 .head-text{
     margin: 0;
     color: rgba(0, 0, 0, 0.7);
@@ -21,25 +65,39 @@ body {
 }
 .input-main{
     display: flex;
-    background-color: rgba(28, 68, 212, 0.2);
-    border-radius: 10px;
-    padding: 20px;
+    
     max-width: 1000px; 
 }
 .input-left{
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    padding-top: 40px;
+    
 }
+
+.input-left-after-h1{
+    display: flex;
+    flex-direction: column;
+    padding-right: 40px;
+    border-right: 1px solid #d1d1d1;
+}
+
 .input-right{
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
     width: 50%;
+    padding-left: 40px;
+    padding-top: 194px;
 }
 .form-label{
-    color: blue;
-    font-weight: bold;
+    color: #757D90;
+    font-weight: 400;
+    margin-bottom: 8px;
+    font-size: 20px;
 }
-.label-margin{
-    margin-top: 20px;
-}
+
 .avatar{
     width: 55px;
     height: 55px;
@@ -48,6 +106,10 @@ body {
     align-items: center;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.avatar:hover{
+    opacity: 0.6;
 }
 
 .plus-svg{
@@ -66,8 +128,77 @@ body {
     cursor: pointer;
     opacity: 100%;
 }
-.btn-outline-primary{
-    margin-right: 8px;
+.button{
+    display: flex;
+    align-items: center;
+    padding: 18px 10px;
+    font-size: 16px;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button-clear{
+   background-color: white;
+   color: #595b5f;
+}
+
+
+.button-clear:hover {
+    border: 1px solid #29ABE2 !important;
+    box-shadow: 2px 4px 4px 0px rgb(0 0 0 / 20%) !important;
+    background-color: white !important;
+    color: #29ABE2;
+}
+
+.button-fill{
+    background-color: #2A3647;
+    color: white;
+    margin-left: 30px;
+}
+
+.button-fill:hover {
+    background-color: #29ABE2 !important;
+    border: 1px solid #29ABE2 !important;
+    border: none;
+    box-shadow: 2px 4px 4px 0px rgb(0 0 0 / 20%);
+}
+
+.tick-img{
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+
+.cross-img{
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.button-clear:hover img {
+    filter: invert(74%) sepia(83%) saturate(3935%) hue-rotate(165deg) brightness(96%) contrast(84%);
+}
+
+
+.button-close{
+    width: 363px;
+    height: 25px;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+    cursor: pointer;
+}
+
+
+
+.button span{
+    white-space: nowrap;
+    height: 100%;
+    width: 100%;
+    font-size: 21px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .bg-grey{
@@ -86,23 +217,25 @@ body {
 }
 .user-container {
     z-index: 5;
-    background-color: #D2DAF6;
+    background-color: #F5F5F5;
     border-radius: 10px;
     padding: 20px;
+    height: 300px;
+    overflow-y: auto;
+    
 }
 .container-outer {
     position: relative;
     top: 20%;
-    height: 350px;
-    width: 500px;
+    height: 380px;
+    width: 350px;
     z-index: 5;
-    background-color: #D2DAF6;
+    background-color: #F5F5F5;
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    
 }
 .closeFrame{
     display: flex;
@@ -125,6 +258,7 @@ body {
 }
 .user-show-box{
     display: flex;
+    align-items: center;
 }
 .individualUser :hover{
     color: rgba(40, 86, 185, 0.5);
@@ -151,7 +285,8 @@ body {
     margin-right: 5px;
 }
 .submit-area{
-    margin-top: 20px
+    margin-top: 20px;
+    display: flex;
 }
 .confirm-text{
     color: rgb(77, 150, 54);
@@ -167,6 +302,9 @@ body {
     flex-direction: column; 
     align-items: center;
 }
+
+
+
 
 
 @media(max-width: 870px) {
