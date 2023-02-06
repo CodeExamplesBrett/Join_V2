@@ -26,8 +26,9 @@ h1{
   --color-high:red;
   --color-medium: yellow;
   --color-low:green;
-  --color-marketing: blue;
-  --color-design: #FF7A00;
+  --color-Marketing: blue;
+  --color-Design: #FF7A00;
+  --color-Sales: #ec8ce4;
 }
 
 .columns {
@@ -84,6 +85,9 @@ h3 {
 
 .task-description {
   margin: 0px 0 8px 0;
+  color: rgba(0,0,0, 0.4);
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .time-and-members {
@@ -97,6 +101,7 @@ h3 {
 .time-date {
   display: flex;
   align-items: center;
+  opacity: 0.5;
 }
 
 .date {
@@ -128,6 +133,7 @@ h3 {
 
 .task-h4{
   margin: 8px 0 4px 0;
+color: rgba(0,0,0, 0.7);
 }
 
 .drag-erea-highlight{
@@ -153,6 +159,13 @@ h3 {
   font-weight: bold;
   color: #ccc;
   padding-left: 4px;
+}
+
+.category-label{
+  padding: 2px 15px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 300;
 }
 
 .member-overview{

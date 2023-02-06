@@ -124,7 +124,7 @@ select{
 
 
 .plus-svg:hover {
-    fill: blue;
+    fill: #29ABE2;
     cursor: pointer;
     opacity: 100%;
 }

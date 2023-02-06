@@ -1,5 +1,12 @@
 //empty array for selected users, from all users dialog
 let selectUser = [];
+let urLink = ''
+
+let categoryImage = {
+  high: './img/urgent.png',
+  mediun: './img/medium.png',
+  low: './img/low.png'
+};
 
 
 // jsdoc: npm install -g jsdoc
@@ -59,8 +66,19 @@ function handleCreateTask() {
   let date = document.getElementById("due-date");
   let urgency = document.getElementById("urgency");
 
+  
+  if(urgency.value == 'high'){
+    console.log('high')
+    urLink = './img/urgent.png'
+  } 
+
+  console.log('ur', urLink)
+
+
   createTaskJSON(title, category, description, date, urgency); 
 }
+
+
 
 
 // creates a JSON for the form inputs 

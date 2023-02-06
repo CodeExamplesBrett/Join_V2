@@ -2,13 +2,12 @@ function cardHTML(tasks, i) {
   return /*html*/ `
     <div draggable="true" onclick="addToBoard(${i})" ondragstart="startDragging(${i})" class="task-each-category">
         <div class="status">
-            <div class="color-field" style="background-color:var(--color-${
-              tasks.urgency
-            })"></div>
-            <div style="background-color:var(--color-${tasks.category})">${tasks.category.toUpperCase()} </div>
+            
+            <div class="category-label" style="background-color:var(--color-${tasks.category})">${tasks.category} </div>
         </div>
         <h4 class="task-h4">${tasks.title}</h4>
          <p class="task-description">${tasks.description}</p>
+         <img src="${task.urgencyLink}" alt="">
          <div class="time-and-members">
              <div class="time-date">
                  <img src="./img/clock.svg" alt="">
