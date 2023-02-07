@@ -5,24 +5,27 @@ function cardHTML(tasks, i) {
             
             <div class="category-label" style="background-color:var(--color-${tasks.category})">${tasks.category} </div>
         </div>
-        <h4 class="task-h4">${tasks.title}</h4>
+
+         <h4 class="task-h4">${tasks.title}</h4>
          <p class="task-description">${tasks.description}</p>
-         <img src="${task.urgencyLink}" alt="">
-         <div class="time-and-members">
-             <div class="time-date">
+         
+
+         <!-- commented out
+         <div class="time-date">
                  <img src="./img/clock.svg" alt="">
                 <p class="date">${tasks.date}</p>
-            </div>
-            <div class="task-member" onmouseover="showMembers(${i})" onmouseout="hideMembers(${i})">
-                <div id="task-member${i}">
-                    
+        </div>  -->
+
+         <div class="members-and-prio">
+             
+            <div class="task-member">
+                <div id="task-member${i}"></div>
+                <div id="number-of-member${i}"></div>
+
+                
+        
                 </div>
-                <div id="number-of-member${i}">
-                    
-                </div>
-                <div class="member-overview d-none" id="member-overview${i}">
-                    
-                </div>
+                <img src="${tasks.PrioUrlLink}" alt="">
             </div>
         </div>
     </div>
@@ -38,12 +41,6 @@ function memberNUmberHTML(length) {
 function memberHTML(img) {
   return /*html*/ `
         <img class="avatar" src="${img}" alt="">
-    `;
-}
-
-function memberOverviewHTML(img) {
-  return /*html*/ `
-        <img class="avatar-ov" src="${img}" alt="">
     `;
 }
 

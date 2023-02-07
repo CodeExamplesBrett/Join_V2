@@ -65,26 +65,6 @@ function loadImgOfMember(task, j) {
 }
 
 
-// on mouseover from user pictures... all users displayed in larger div
-// function called within the HTML of fuction "cardHTML" which is called above in function "showCards"
-function showMembers(i) {
-  let task = tasks[i];
-  document.getElementById(`member-overview${i}`).innerHTML = "";
-  document.getElementById(`member-overview${i}`).classList.remove("d-none");
-  for (let j = 0; j < task.user.length; j++) {
-    const user = task.user[j];
-    document.getElementById(`member-overview${i}`).innerHTML +=
-      //calls function (in template.js) memberOverviewHTML added user image  to larger mouseover div.
-      memberOverviewHTML(user.img);
-  }
-}
-
-
-//on mouseout hide the enlarged user pictures again.
-function hideMembers(i) {
-  document.getElementById(`member-overview${i}`).classList.add("d-none");
-}
-
 // clear all containers at begining .. called in function "showCards()" above.
 function clearOverview() {
   document.getElementById("inProgress").innerHTML = "";

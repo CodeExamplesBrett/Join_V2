@@ -1,12 +1,6 @@
 //empty array for selected users, from all users dialog
 let selectUser = [];
-let urLink = ''
-
-let categoryImage = {
-  high: './img/urgent.png',
-  mediun: './img/medium.png',
-  low: './img/low.png'
-};
+let UrgentUrlLink = ''
 
 
 // jsdoc: npm install -g jsdoc
@@ -66,19 +60,26 @@ function handleCreateTask() {
   let date = document.getElementById("due-date");
   let urgency = document.getElementById("urgency");
 
-  
-  if(urgency.value == 'high'){
-    console.log('high')
-    urLink = './img/urgent.png'
-  } 
-
-  console.log('ur', urLink)
-
-
+  setUrlForPriorityLabel()
   createTaskJSON(title, category, description, date, urgency); 
 }
 
 
+// creates url path for urgentcy images global variable "UrgentUrlLink" then added to task Json
+function setUrlForPriorityLabel(){
+  if(urgency.value == 'high'){
+    console.log('high')
+    UrgentUrlLink = './img/high.png'
+  } 
+  if(urgency.value == 'medium'){
+    console.log('medium')
+    UrgentUrlLink = './img/medium.png'
+  } 
+  if(urgency.value == 'low'){
+    console.log('high')
+    UrgentUrlLink = './img/low.png'
+  } 
+}
 
 
 // creates a JSON for the form inputs 
@@ -90,6 +91,7 @@ function createTaskJSON(title, category, description, date, urgency){
     date: date.value,
     urgency: urgency.value,
     status: "todo",
+    PrioUrlLink: UrgentUrlLink,
     // selected users from array "selectUser"
     user: selectUser
   };
