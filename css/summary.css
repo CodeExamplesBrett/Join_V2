@@ -166,12 +166,18 @@ h1{
 .pencil-background{
     height: 50px;
     width: 50px;
-    background-color: rgb(182, 170, 170);
+    background-color: #2A3647;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
 }
 
-.pencil-background img{
-   object-fit: fill;
+.pencil{
+   height: 30px;
+   filter: brightness(0) invert(1);
+
 }
 
 
