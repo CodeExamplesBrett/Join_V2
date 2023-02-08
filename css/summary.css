@@ -69,16 +69,50 @@ h1{
     border: 1px solid #ecedee;
     border-radius: 16px;
     display: flex; 
+    align-items: center;
+}
+
+.task-nr-bottom{
+    height: 110px;
+    width: 160px;
+    background-color: white;
+    border: 1px solid #ecedee;
+    border-radius: 16px;
+    display: flex; 
     flex-direction: column;
     align-items: center;
 }
 
-.task-nr:first-child{
-    
+.urgent-nr-left{
+    width: 180px;
+    display: flex;
+    border-right: 2px solid #D1D1D1;
 }
 
-.task-nr:last-child{
-    
+.urgent-date-nr{
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.urgent-date{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.urgent-arrow{
+    height: 40px;
+    margin: 10px;
+    margin-left: 46px;
+}
+
+.urgent-date-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .count{
@@ -89,8 +123,6 @@ h1{
     margin-top: 5px;
 }
 
-
-
 .count-descr{
     font-size: 14px;
     font-weight: 400;
@@ -98,6 +130,51 @@ h1{
     padding: 0;
     text-align: center;
 }
+
+.urgent-nr-right{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+
+.deadline-descr{
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.todo-nr-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.todo-container{
+    height: 110px;
+    width: 160px;
+    background-color: white;
+    border: 1px solid #ecedee;
+    border-radius: 16px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.pencil-background{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(182, 170, 170);
+    border-radius: 50%;
+}
+
+.pencil-background img{
+   object-fit: fill;
+}
+
+
 
 .input-right{
     display: flex;
