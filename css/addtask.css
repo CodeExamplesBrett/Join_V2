@@ -63,11 +63,12 @@ select{
 .main{
     margin-right: 40px;
 }
+
 .input-main{
     display: flex;
-    
     max-width: 1000px; 
 }
+
 .input-left{
     width: 50%;
     display: flex;

@@ -110,6 +110,12 @@ function findNearestDate(dueDates) {
     let fullDate = outputMonth + ' ' + outputDay + ', ' + outputYear
     //console.log('full --- all', fullDate)
     document.getElementById('urgentDate').innerHTML = fullDate;
-    
-    
   }
+
+  
+// opens next paqe in process
+function openBoardWindow(){
+  setTimeout(function () {
+     window.location.href = "task.html";
+ }, 500)
+ }
