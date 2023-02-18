@@ -29,6 +29,17 @@ h1{
   --color-Marketing: blue;
   --color-Design: #FF7A00;
   --color-Sales: #ec8ce4;
+
+  --color-1:#0190E0;
+  --color-2:#EE00D6;
+  --color-3:#02CF2F;
+  --color-4:#FFA800;
+  --color-5:#9327FF;
+  --color-6:#FF5C00;
+  --color-7:#CB02CF;
+  --color-8:#AF1616;
+  --color-9:#462F8A;
+  --color-0:#007CEE;
 }
 
 .columns {
@@ -114,8 +125,23 @@ h3 {
 .avatar {
   width: 32px;
   height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  object-fit: cover;
+  background-color: #FF7A00;
+  border: 1px solid white;
+  /* object-fit: cover; */
+}
+
+.initial-text{
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+.member-symbol{
+  display: flex;
 }
 
 .avatar-ov {
@@ -131,7 +157,7 @@ h3 {
   height: 32px;
   border-radius: 50%;
   object-fit: cover;
-  margin-left: -16px;
+  margin-left: -9px;
 }
 
 .task-h4{
@@ -170,6 +196,7 @@ color: rgba(0,0,0, 0.7);
   border-radius: 5px;
   color: white;
   font-weight: 300;
+  width: fit-content;
 }
 
 .member-overview{

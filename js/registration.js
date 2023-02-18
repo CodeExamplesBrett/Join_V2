@@ -6,10 +6,11 @@ function addUser(event){
     let email =document.getElementById("email");
     let password =document.getElementById("password");
     let name =document.getElementById("name");
+    let lastName =document.getElementById("lastName");
     //console.log(email);
     //console.log(password)
-
-    users.push({email: email.value, password: password.value, name: name.value, img: './img/avatar.png'});
+    getInitials(name, lastName)
+    createUserJson(email, password, name, lastName);
     setArray("user", users);
     console.log(tasks);
 
@@ -17,10 +18,30 @@ function addUser(event){
 
     setTimeout(()=> {
         window .location.href = "login.html?msg=Thank you for registering";
-    }, 1000)
+    }, 1000);
     //window.location.href ="login.html";
                 
 }
+
+function getInitials(name, lastName){
+    let fullName = name.value + ' ' + lastName.value
+    const words = fullName.split(" "); // split the string into an array of words
+    const firstLetters = words.map(word => word.charAt(0)); // extract the first letter of each word
+    const capitalizedLetters = firstLetters.map(letter => letter.toUpperCase()); // capitalize each letter
+    return initials = capitalizedLetters.join(""); // join the letters into a string
+    //console.log(initials);
+}
+
+function createUserJson(email, password, name, lastName){
+    users.push({email: email.value, 
+        password: password.value, 
+        name: name.value, lastName: 
+        lastName.value, 
+        initials: initials,
+        img: './img/avatar.png'});
+}
+
+
 
 function clear(){
     document.getElementById("email").value = "";

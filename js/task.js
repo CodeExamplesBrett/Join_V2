@@ -21,6 +21,7 @@ function showCards() {
           // function (in template.js) memberNUmberHTML returns a span with the number of extra users
           memberNUmberHTML(task.user.length - 2);
       }
+      //if there are users add their images
       if (task.user.length > 0) {
         loadImgOfMember(task, i);
       }
@@ -51,14 +52,17 @@ function assignStatus(element) {
 
 
 function loadImgOfMember(task, j) {
+  //for loop just for the first two assigned users i.e 0 and 1
   for (let i = 0; i <= 1; i++) {
     let user = task.user[i];
+    
     if (user) {
       // goes through user with variable "i" --- variable "j" from the total tasks array
       // the pictures are assigned to the corresponding div with variable "j" 
       // function memberHTML (in template.js) used to add the pictures to div.
+      let colorId = user.id % 10;
       document.getElementById(`task-member${j}`).innerHTML += memberHTML(
-        user.img
+        user.initials, colorId
       );
     }
   }

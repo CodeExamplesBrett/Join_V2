@@ -19,7 +19,7 @@ function cardHTML(tasks, i) {
          <div class="members-and-prio">
              
             <div class="task-member">
-                <div id="task-member${i}"></div>
+                <div class="member-symbol" id="task-member${i}"></div>
                 <div id="number-of-member${i}"></div>
 
                 
@@ -38,11 +38,68 @@ function memberNUmberHTML(length) {
     `;
 }
 
-function memberHTML(img) {
+function memberHTML(initials, colorId) {
   return /*html*/ `
-        <img class="avatar" src="${img}" alt="">
+        <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
     `;
 }
+
+
+function overlayTaskHTML(i) {
+  return /*html*/ `
+    
+    
+    <div class="category-label" style="background-color:var(--color-${tasks[i].category})">${tasks[i].category} </div>
+    <div class="dialog-title">${tasks[i].title}</div>
+    <div class="dialog-description">${tasks[i].description}</div>
+
+    <div style="display: flex">
+    <span class="dialog-detail-text">Due Date:</span>
+    <div class="">${tasks[i].date}</div>
+    </div>
+
+    <div style="display: flex">
+    <span class="dialog-detail-text">Priority:</span>
+    <div class="">${tasks[i].date}</div>
+    </div>
+
+    <div style="display: flex">
+    <span class="dialog-detail-text">Assigned to:</span>
+    <div class="">${tasks[i].date}</div>
+    </div>
+    
+
+    
+
+      <div class="user-box-dialog">
+        
+          <span class="gray-color">Added to</span>
+          <span class="user-names-dialog" id="user-names${i}"></span>
+      </div>
+        
+            
+          </div>
+    
+
+    <div class="mobile-move-category">
+            <div>
+                <span class="gray-color">Move to category</span>
+            </div>
+        <button class="category-btn" onclick="moveToCategoryButton(${i}, 'todo')">to do</button>
+        <button class="category-btn" onclick="moveToCategoryButton(${i}, 'inProgress')">In Progress</button>
+        <button class="category-btn" onclick="moveToCategoryButton(${i}, 'testing')">Testing</button>
+        <button class="category-btn" onclick="moveToCategoryButton(${i}, 'done')">Done</button>
+    </div>
+    
+    <div class="dialog-btn">
+        <button class="close-btn" onclick="closeBox()">Close</button>
+        <button class="add-btn" onclick="deletefromBoard(${i})">Löschen</button>
+    </div>
+
+    
+    `;
+}
+
 
 function backlogTableHTML(i, colorOfUrgency) {
   return /*html*/ `
@@ -79,56 +136,7 @@ function backlogTableHTML(i, colorOfUrgency) {
             `;
 }
 
-function overlayTaskHTML(i) {
-  return /*html*/ `
-  
-    <div class="dialog-title">${tasks[i].title}</div>
 
-    
-
-      <div class="user-box-dialog">
-          <span class="gray-color">Added to</span>
-          <span class="user-names-dialog" id="user-names${i}"></span>
-      </div>
-        <div class="table-con"> 
-          <div class="info-table">
-            <table class="dialog-table">
-                  <tr>
-                    <th>Category</th>
-                    <td class="font-variant">${tasks[i].category}</td>
-                  </tr>
-
-                  <tr>
-                    <th>Status</th>
-                    <td>${tasks[i].status}</td>
-                  </tr>
-
-                  <tr></tr>
-                    <th class="display-block">Details</th>
-                    <td>${tasks[i].description}</td>
-                  </tr>
-              </table>
-          </div>
-    <div class="date-con">${tasks[i].date}</div>
-
-    <div class="mobile-move-category">
-            <div>
-                <span class="gray-color">Move to category</span>
-            </div>
-        <button class="category-btn" onclick="moveToCategoryButton(${i}, 'todo')">to do</button>
-        <button class="category-btn" onclick="moveToCategoryButton(${i}, 'inProgress')">In Progress</button>
-        <button class="category-btn" onclick="moveToCategoryButton(${i}, 'testing')">Testing</button>
-        <button class="category-btn" onclick="moveToCategoryButton(${i}, 'done')">Done</button>
-    </div>
-    
-    <div class="dialog-btn">
-        <button class="close-btn" onclick="closeBox()">Close</button>
-        <button class="add-btn" onclick="deletefromBoard(${i})">Löschen</button>
-    </div>
-
-    
-    `;
-}
 
 // From addTasks.js  ... showUser function
 function addUserDataToDialogbox(i, userName, userImg){
