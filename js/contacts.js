@@ -9,12 +9,13 @@ async function getContacts(){
 
 function showContacts(){
     //push first letter of first name into array "UserFirstIntitial"
+    //push full name in array "allUsers"
     for (let i = 0; i < users.length; i++) {
         let userFirstLetter = users[i].name.charAt(0);
         UserFirstIntitial.push(userFirstLetter);
         allUsers.push(users[i].name + ' ' + users[i].lastName);
     }
-    
+    //sort arrays + filter first letter array for unique first letters
     UserFirstIntitial.sort();
     allUsers.sort();
     console.log(allUsers)
@@ -23,7 +24,7 @@ function showContacts(){
 
 
 
-    //Sort the first letters then add divs with first letter of first name as title
+    //Create divs for users with first letter as id -- add heading letter
     
     for (let i = 0; i < uniqueLetters.length; i++) {
         let displayLetter = uniqueLetters[i];
@@ -35,6 +36,7 @@ function showContacts(){
             `;    
     }
 
+    //If first letter of username is equal to the unique Letter put that user in the corresponding div
     for (let i = 0; i < allUsers.length; i++) {
         let fullName = allUsers[i];
         let userLetter = allUsers[i].charAt(0);
