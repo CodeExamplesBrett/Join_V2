@@ -7,7 +7,6 @@ let UrgentUrlLink = ''
 
 /**
  * This function reads input data from addTasks form pushes input to JSON-array then saves this array on backend server
- *
  * @param {string} event - on event here summit button click the default funtcion of the form is prevented so that processes in console can be seen and the page is not automatically reloaded.
  */
 function addTask(event) {
@@ -43,12 +42,6 @@ function handleCreateTask() {
  
 /**
  * This function provides the inputs for the JSON to be added
- *
- * @param {string} title - task name
- * @param {string} category - task category
- * @param {string} description - task description
- * @param {string} date - due date as string
- * @param {string} urgency task urgency
  */
  function inputForTaskArray() {
   // Variables saved as JSON , with .value the value of the form object is returned (writen this way so that the form can then be reset).
@@ -69,15 +62,15 @@ function handleCreateTask() {
 function setUrlForPriorityLabel(){
   if(urgency.value == 'high'){
     console.log('high')
-    UrgentUrlLink = './img/high.png'
+    UrgentUrlLink = './img/arrow_urgent.svg'
   } 
   if(urgency.value == 'medium'){
     console.log('medium')
-    UrgentUrlLink = './img/medium.png'
+    UrgentUrlLink = './img/medium.svg'
   } 
   if(urgency.value == 'low'){
     console.log('high')
-    UrgentUrlLink = './img/low.png'
+    UrgentUrlLink = './img/arrow_low.svg'
   } 
 }
 
@@ -116,12 +109,6 @@ function pushTaskToServerJSON(task){
 
 /**
  * This function resets all inputs in addTask form
- *
- * @param {string} title - task name
- * @param {string} category - task category
- * @param {string} description - task description
- * @param {string} date - due date as string
- * @param {string} urgency task urgency
  */
  function resetFormObjects() {
   // Reset form objects

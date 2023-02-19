@@ -47,8 +47,6 @@ function memberHTML(initials, colorId) {
 
 function overlayTaskHTML(i) {
   return /*html*/ `
-    
-    
     <div class="category-label" style="background-color:var(--color-${tasks[i].category})">${tasks[i].category} </div>
     <div class="dialog-title">${tasks[i].title}</div>
     <div class="dialog-description">${tasks[i].description}</div>
@@ -59,28 +57,19 @@ function overlayTaskHTML(i) {
     </div>
 
     <div style="display: flex">
-    <span class="dialog-detail-text">Priority:</span>
-    <div class="">${tasks[i].date}</div>
+        <span class="dialog-detail-text">Priority:</span>
+        <div class="priority-label" style="background-color:var(--color-${tasks[i].urgency})">
+            <span>${tasks[i].urgency} </span>
+            <img class="urgency-invert-color" src="${tasks[i].PrioUrlLink}" alt="">
+        </div>
     </div>
 
     <div style="display: flex">
     <span class="dialog-detail-text">Assigned to:</span>
-    <div class="">${tasks[i].date}</div>
     </div>
     
-
+    <div class="user-names-dialog" id="user-names${i}"></div>
     
-
-      <div class="user-box-dialog">
-        
-          <span class="gray-color">Added to</span>
-          <span class="user-names-dialog" id="user-names${i}"></span>
-      </div>
-        
-            
-          </div>
-    
-
     <div class="mobile-move-category">
             <div>
                 <span class="gray-color">Move to category</span>
@@ -91,12 +80,9 @@ function overlayTaskHTML(i) {
         <button class="category-btn" onclick="moveToCategoryButton(${i}, 'done')">Done</button>
     </div>
     
-    <div class="dialog-btn">
-        <button class="close-btn" onclick="closeBox()">Close</button>
-        <button class="add-btn" onclick="deletefromBoard(${i})">Löschen</button>
-    </div>
-
     
+        <img src="../img/close-icon.png" class="close-btn" onclick="closeBox()">
+        <button class="del-btn" onclick="deletefromBoard(${i})">Löschen</button>
     `;
 }
 

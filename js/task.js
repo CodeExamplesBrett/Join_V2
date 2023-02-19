@@ -137,10 +137,12 @@ function loadUser(i) {
 
   for (let j = 0; j < task.user.length; j++) {
     const user = task.user[j];
+    let colorId = user.id % 10;
+    let initials = user.initials
     document.getElementById(`user-names${i}`).innerHTML += /*html*/ `
     <div class="user-images-names">
-         <img class="user-img" src="${user.img}" alt="">
-         <span class="user-name">${user.name}</span>
+         <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
+         <span class="user-name">${user.name} ${user.lastName}</span>
     </div>
         `;
   }

@@ -14,7 +14,6 @@ form{
 }
 
 .contacts-container{
-    display: flex;
     min-width: 400px; 
     min-height: 500px;
     background-color: #dee5e7;

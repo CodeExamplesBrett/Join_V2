@@ -23,9 +23,9 @@ h1{
 }
 
 :root{
-  --color-high:red;
-  --color-medium: yellow;
-  --color-low:green;
+  --color-high:#FF3D00;
+  --color-medium: #FFA800;
+  --color-low:#7AE229;
   --color-Marketing: blue;
   --color-Design: #FF7A00;
   --color-Sales: #ec8ce4;
@@ -112,6 +112,35 @@ h3 {
   margin-top: 10px;
 }
 
+.members-and-prio img{
+  height: 32px;
+}
+
+.urgency-invert-color{
+  filter: brightness(0) invert(1);
+  height: 32px;
+}
+
+.priority-label{
+  padding: 0px 12px;
+  border-radius: 5px;
+  color: white;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+.dialog-detail-text{
+  color: #212325;
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 10px;
+  margin-bottom: 17px;
+}
+
+
 .time-date {
   display: flex;
   align-items: center;
@@ -120,6 +149,45 @@ h3 {
 
 .date {
   margin: 0 8px;
+}
+
+.dialogb {
+  position: absolute;
+  background-color: #fefefe;
+  margin: auto;
+  color: black !important;
+  font-size: 20px;
+  padding: 27px;
+  border: 1px solid #888;
+  width: 400px;
+  border-radius: 16px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 27px;
+  right: 27px;
+  height: 26px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.del-btn {
+  position: absolute;
+  bottom: 27px;
+  right: 27px;
+  width: 110px;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  background-color: #2A3647;
+  border: 1px solid rgb(153, 149, 149);
+  cursor: pointer;
+}
+
+.dialog-description{
+  margin-bottom: 20px;
+  color: #2A3647
 }
 
 .avatar {
@@ -142,6 +210,20 @@ h3 {
 
 .member-symbol{
   display: flex;
+}
+
+.user-name {
+  margin-left: 16px;
+  font-weight: 400;
+  font-size: 19px;
+}
+
+.user-images-names {
+  display: flex;
+  margin-right: 22px;
+  margin-bottom: 16px;
+  align-items: center;
+  text-align: center;
 }
 
 .avatar-ov {

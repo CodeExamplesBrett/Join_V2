@@ -1,3 +1,6 @@
+UserFirstIntitial = [];
+allUsers = [];
+
 async function getContacts(){
     await init();
     //calcValues(); 
@@ -5,10 +8,53 @@ async function getContacts(){
 
 
 function showContacts(){
+    //push first letter of first name into array "UserFirstIntitial"
     for (let i = 0; i < users.length; i++) {
-        let userName = users[i];
+        let userFirstLetter = users[i].name.charAt(0);
+        UserFirstIntitial.push(userFirstLetter);
+        allUsers.push(users[i].name + ' ' + users[i].lastName);
     }
+    
+    UserFirstIntitial.sort();
+    allUsers.sort();
+    console.log(allUsers)
+    let uniqueLetters = UserFirstIntitial.filter((letter, i) => UserFirstIntitial.indexOf(letter) === i);
+    console.log(uniqueLetters);
+
+
+
+    //Sort the first letters then add divs with first letter of first name as title
+    
+    for (let i = 0; i < uniqueLetters.length; i++) {
+        let displayLetter = uniqueLetters[i];
+        document.getElementById("contacts-container").innerHTML += /*html*/ `
+        <div class="alphabet-Letter">
+            <div class="letter"><h2>${displayLetter}</h2></div>
+            <div id="${displayLetter}"></div> 
+        </div>
+            `;    
+    }
+
+    for (let i = 0; i < allUsers.length; i++) {
+        let fullName = allUsers[i];
+        let userLetter = allUsers[i].charAt(0);
+        for (let j = 0; j < uniqueLetters.length; j++) {
+            const uniqueLetter = uniqueLetters[j];
+            if(userLetter == uniqueLetter){
+                document.getElementById(`${uniqueLetter}`).innerHTML += /*html*/ `
+                <div>${fullName}</div>`
+            }
+            
+        }
+        
+    }
+
+
+
 }
+    
+
+
 
 function addContact() {
     let email =document.getElementById("email");
