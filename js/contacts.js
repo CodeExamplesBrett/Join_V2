@@ -1,58 +1,75 @@
 UserFirstIntitial = [];
-allUsers = [];
 
 async function getContacts(){
     await init();
     //calcValues(); 
+    showContacts();
 }
 
 
 function showContacts(){
+    clearContacts();
     //push first letter of first name into array "UserFirstIntitial"
     //push full name in array "allUsers"
     for (let i = 0; i < users.length; i++) {
         let userFirstLetter = users[i].name.charAt(0);
         UserFirstIntitial.push(userFirstLetter);
-        allUsers.push(users[i].name + ' ' + users[i].lastName);
     }
-    //sort arrays + filter first letter array for unique first letters
+    sortArrays();  
+}
+
+
+function sortArrays(){
+    //sort array + filter first letter array for unique first letters
     UserFirstIntitial.sort();
-    allUsers.sort();
-    console.log(allUsers)
     let uniqueLetters = UserFirstIntitial.filter((letter, i) => UserFirstIntitial.indexOf(letter) === i);
     console.log(uniqueLetters);
+    createAlphabetletters(uniqueLetters);
+}
 
 
-
-    //Create divs for users with first letter as id -- add heading letter
+function createAlphabetletters(uniqueLetters){
+       //Create divs for users with first letter as id -- add heading letter
     
-    for (let i = 0; i < uniqueLetters.length; i++) {
+       for (let i = 0; i < uniqueLetters.length; i++) {
         let displayLetter = uniqueLetters[i];
         document.getElementById("contacts-container").innerHTML += /*html*/ `
         <div class="alphabet-Letter">
             <div class="letter"><h2>${displayLetter}</h2></div>
-            <div id="${displayLetter}"></div> 
+            <div class="displayLetter" id="${displayLetter}"></div> 
         </div>
             `;    
     }
+    pushUserToLetter(uniqueLetters);
+}
 
-    //If first letter of username is equal to the unique Letter put that user in the corresponding div
-    for (let i = 0; i < allUsers.length; i++) {
-        let fullName = allUsers[i];
-        let userLetter = allUsers[i].charAt(0);
+
+
+//If first letter of username is equal to the unique Letter put that user in the corresponding div
+function pushUserToLetter(uniqueLetters){
+    for (let i = 0; i < users.length; i++) {
+        let fullName = users[i].name + ' ' + users[i].lastName;
+        let initials = users[i].initials
+        let colorId = users[i].id % 10;
+        let userLetter = users[i].name.charAt(0);
         for (let j = 0; j < uniqueLetters.length; j++) {
             const uniqueLetter = uniqueLetters[j];
             if(userLetter == uniqueLetter){
                 document.getElementById(`${uniqueLetter}`).innerHTML += /*html*/ `
-                <div>${fullName}</div>`
+                <div class="contact-details">
+                    <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
+                    <div class="full-name">${fullName}</div>
+                </div>
+                `
             }
             
         }
         
     }
+}
 
-
-
+function clearContacts(){
+    document.getElementById("contacts-container").innerHTML = ""
 }
     
 

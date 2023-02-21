@@ -141,7 +141,7 @@ function loadUser(i) {
     let initials = user.initials
     document.getElementById(`user-names${i}`).innerHTML += /*html*/ `
     <div class="user-images-names">
-         <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
+          <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
          <span class="user-name">${user.name} ${user.lastName}</span>
     </div>
         `;

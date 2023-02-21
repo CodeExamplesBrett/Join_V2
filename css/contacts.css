@@ -4,6 +4,14 @@ h1{
     padding-right: 40px; 
 }
 
+h2{
+    font-weight: 400;
+    font-size: 19px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 20px;
+    margin-right: 50px;
+}
+
 form{
     display: flex;
     flex-direction: column;
@@ -16,7 +24,10 @@ form{
 .contacts-container{
     min-width: 400px; 
     min-height: 500px;
-    background-color: #dee5e7;
+    background-color: white;
+    height: calc(100vh - 90px);
+    box-shadow: 4px 0px  rgb(0 0 0 / 10%);
+    overflow: auto;
 }
 
 .heading{
@@ -32,4 +43,30 @@ form{
     padding-bottom: 10px;
     font-size: 25px;
     border-left: 2px solid #29ABE2;
+}
+
+.alphabet-Letter{
+    margin-left: 40px;
+}
+
+.displayLetter{
+    display: flex;
+    flex-direction: column;
+}
+.contact-details{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 16px;
+    border-radius: 15px;
+    width: 80%
+}
+
+.contact-details:hover{
+    background-color: rgba(0,0,0,0.04);
+}
+
+
+.full-name{
+    margin-left: 20px;
 }
