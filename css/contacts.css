@@ -7,9 +7,8 @@ h1{
 h2{
     font-weight: 400;
     font-size: 19px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding-bottom: 20px;
-    margin-right: 50px;
+    padding-bottom: 6px;
+    margin-left: 25px;
 }
 
 form{
@@ -22,7 +21,7 @@ form{
 }
 
 .contacts-container{
-    min-width: 400px; 
+    min-width: 350px; 
     min-height: 500px;
     background-color: white;
     height: calc(100vh - 90px);
@@ -30,10 +29,25 @@ form{
     overflow: auto;
 }
 
-.heading{
+.contacts-container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.contacts-container::-webkit-scrollbar-thumb {
+    background-color: #c2c2c2; /* Set the color of the thumb */
+    
+  }
+  
+.contacts-container::-webkit-scrollbar-track {
+    background-color: #f2f2f2; /* Set the color of the track */
+    
+  }
+
+.heading-contacts{
     padding-left: 40px;
     display: flex;
     align-items: center;
+    margin-top: 40px;
 }
 
 .slogan-text{
@@ -53,6 +67,13 @@ form{
     display: flex;
     flex-direction: column;
 }
+
+.border-bottom{
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
 .contact-details{
     display: flex;
     flex-wrap: nowrap;
@@ -66,7 +87,74 @@ form{
     background-color: rgba(0,0,0,0.04);
 }
 
+.contact-details:hover:nth-child(1){
+    transform: scale(0.99);
+}
+
 
 .full-name{
     margin-left: 20px;
+}
+
+.contact-full-details{
+    min-height: 400px;
+    padding-left: 40px;
+    padding-top: 50px;
+}
+
+.button{
+    
+    display: flex;
+    align-items: center;
+    padding: 14px 10px;
+    font-size: 16px;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button-fill{
+    background-color: #2A3647;
+    color: white;
+    margin-left: 30px;
+}
+
+.button span {
+    white-space: nowrap;
+    height: 100%;
+    width: 100%;
+    font-size: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 14px;
+}
+
+.button-fill:hover {
+    background-color: #29ABE2 !important;
+    border: 1px solid #29ABE2 !important;
+    border: none;
+    box-shadow: 2px 4px 4px 0px rgb(0 0 0 / 20%);
+}
+
+.new-contact-container{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.name-title{
+    display: flex;
+}
+
+.avatar-large{
+    height: 100px !important;
+    width: 100px !important;
+}
+
+.initial-text-large{
+    font-size: 42px !important;
+}
+
+.dnone{
+    display: none;
 }

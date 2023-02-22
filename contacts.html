@@ -44,13 +44,13 @@
             
         </div>
 
-        <div>
-            <div class="heading">
+        <div class="right-side">
+            <div class="heading-contacts">
                 <h1>Contacts</h1>
                 <p class="slogan-text">Better with a team</p>
             </div>
 
-            <div class="addContactContainer">
+            <div class="addContactContainer dnone">
                 <form onsubmit="addContact(); return false;">
                     <label for="title" class="form-label">Email*</label>
                     <input type="text" id="email">
@@ -67,10 +67,18 @@
                     <button type="submit">Register</button>
                 
                 </form>
-
-                <button onclick="showContacts()">test</button>
-
             </div>
+
+            <div class="contact-full-details" id="contact-full-details"></div>
+
+
+            <div class="new-contact-container">
+                <button type="submit" class="button button-fill">
+                    <span>New Contact </span>
+                    <img src="../img/new-contact-icon.png" class="tick-img">
+                </button>
+            </div>
+            
 
         </div>
 

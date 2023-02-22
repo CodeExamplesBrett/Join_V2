@@ -36,7 +36,9 @@ function createAlphabetletters(uniqueLetters){
         document.getElementById("contacts-container").innerHTML += /*html*/ `
         <div class="alphabet-Letter">
             <div class="letter"><h2>${displayLetter}</h2></div>
+            <div class="border-bottom"></div>
             <div class="displayLetter" id="${displayLetter}"></div> 
+            
         </div>
             `;    
     }
@@ -56,7 +58,7 @@ function pushUserToLetter(uniqueLetters){
             const uniqueLetter = uniqueLetters[j];
             if(userLetter == uniqueLetter){
                 document.getElementById(`${uniqueLetter}`).innerHTML += /*html*/ `
-                <div class="contact-details">
+                <div class="contact-details" onclick="showFullDetails('${fullName}', '${initials}', '${colorId}' )">
                     <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
                     <div class="full-name">${fullName}</div>
                 </div>
@@ -66,6 +68,20 @@ function pushUserToLetter(uniqueLetters){
         }
         
     }
+}
+
+function showFullDetails(fullName, initials, colorId){
+    clearFullDetails();
+    document.getElementById("contact-full-details").innerHTML = /*html*/`
+    <div class="name-title">
+        <div style="background-color:var(--color-${colorId})" class="avatar avatar-large"><p class="initial-text initial-text-large">${initials}</p></div>
+        <div>${fullName}</div>
+    </div>
+    `
+}
+
+function clearFullDetails(){
+    document.getElementById("contact-full-details").innerHTML = ""
 }
 
 function clearContacts(){
