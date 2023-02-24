@@ -51,6 +51,8 @@ function createAlphabetletters(uniqueLetters){
 function pushUserToLetter(uniqueLetters){
     for (let i = 0; i < users.length; i++) {
         let fullName = users[i].name + ' ' + users[i].lastName;
+        let email = users[i].email
+        let phone = users[i].password
         let initials = users[i].initials
         let colorId = users[i].id % 10;
         let userLetter = users[i].name.charAt(0);
@@ -58,7 +60,7 @@ function pushUserToLetter(uniqueLetters){
             const uniqueLetter = uniqueLetters[j];
             if(userLetter == uniqueLetter){
                 document.getElementById(`${uniqueLetter}`).innerHTML += /*html*/ `
-                <div class="contact-details" onclick="showFullDetails('${fullName}', '${initials}', '${colorId}' )">
+                <div class="contact-details" onclick="showFullDetails('${fullName}', '${initials}', '${colorId}', '${email}', '${phone}' )">
                     <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
                     <div class="full-name">${fullName}</div>
                 </div>
@@ -70,13 +72,25 @@ function pushUserToLetter(uniqueLetters){
     }
 }
 
-function showFullDetails(fullName, initials, colorId){
+function showFullDetails(fullName, initials, colorId, email, phone){
     clearFullDetails();
     document.getElementById("contact-full-details").innerHTML = /*html*/`
     <div class="name-title">
         <div style="background-color:var(--color-${colorId})" class="avatar avatar-large"><p class="initial-text initial-text-large">${initials}</p></div>
-        <div>${fullName}</div>
+        <div class="full-name-detail">${fullName}</div>
     </div>
+    <div class="info-heading">
+        <span>Contact Information</span>
+    </div>
+    <div class="detail-div">
+        <span class="detail-headings">Email</span>
+        <span class="detail-email">${email}</span>
+    </div>
+    <div class="detail-div">
+        <span class="detail-headings">Phone</span>
+        <span class="detail-phone">${phone}</span>
+    </div>
+
     `
 }
 
@@ -88,8 +102,6 @@ function clearContacts(){
     document.getElementById("contacts-container").innerHTML = ""
 }
     
-
-
 
 function addContact() {
     let email =document.getElementById("email");

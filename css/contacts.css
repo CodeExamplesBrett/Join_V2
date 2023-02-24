@@ -144,6 +144,7 @@ form{
 
 .name-title{
     display: flex;
+    align-items: center;
 }
 
 .avatar-large{
@@ -153,6 +154,29 @@ form{
 
 .initial-text-large{
     font-size: 42px !important;
+}
+
+.full-name-detail{
+    color: #2A3647;
+    font-size: 46px;
+    font-weight: 400;
+    margin-left: 39px;
+}
+
+.info-heading{
+    margin: 35px 0px;
+    font-size: 18px;
+}
+
+.detail-headings{
+    display: flex;
+    margin: 20px 0px;
+    font-weight: 700;
+}
+
+.detail-email{
+    color: #007CEE;
+    font-size: 14px;
 }
 
 .dnone{
