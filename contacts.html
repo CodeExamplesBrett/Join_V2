@@ -50,32 +50,61 @@
                 <p class="slogan-text">Better with a team</p>
             </div>
 
-            <div class="addContactContainer dnone">
-                <form onsubmit="addContact(); return false;">
-                    <label for="title" class="form-label">Email*</label>
-                    <input type="text" id="email">
             
-                    <label for="title" class="form-label">PW*</label>
-                    <input type="text" id="password">
-            
-                    <label for="title" class="form-label">First Name*</label>
-                    <input type="text" id="firstName">
-
-                    <label for="title" class="form-label">Last Name*</label>
-                    <input type="text" id="lastName">
-            
-                    <button type="submit">Register</button>
-                
-                </form>
-            </div>
 
             <div class="contact-full-details" id="contact-full-details"></div>
 
+            <div id="bg-grey" class="bg-grey dnone" onclick="hideAddNewContactDialog()">
+                <div class="add-contact-container" onclick="event.stopPropagation()">
+                    <div class="add-contact-left">
+                        <img class="left-join-icon" src="./img/logo-white.png">
+                        <span class="left-heading">Add Contact</span>
+                        <span class="left-heading sub-heading">Tasks are better with a team!</span>
+                        <div class="bottom-border"></div>
+
+                    </div>
+
+                    <div class="add-contact-right">
+                        <div class="add-contact-avatar">
+                            <img class="contact-avatar" src="./img/member.png">
+                        </div>
+                        
+
+                        <div class="form-button-container">
+                            <img src="./img/close-icon.png" class="close-button" onclick="hideAddNewContactDialog()">
+                            <form onsubmit="addContact(); return false;">
+                                <input type="text" id="firstName" placeholder="First Name" required>
+                                <input type="text" id="lastName" placeholder="Last Name" required>
+                                <input type="text" id="email" placeholder="Email" required>
+                                <input type="text" id="phone" placeholder="phone" required>
+                                <input type="text" id="password" placeholder="Password" required>
+                                
+                                <div style="display: flex;">
+                                    <div type="reset" class="button button-clear"
+                                    onclick="hideAddNewContactDialog()">
+                                    <span>Cancel</span>
+                                    <img src="../img/close-icon.png" class="cross-img">
+                                    </div>
+
+                                    <button type="submit" class="button button-fill">
+                                        <span>Create Contact</span>
+                                        <img src="../img/checkmark.png" class="tick-img">
+                                    </button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+            </div>
 
             <div class="new-contact-container">
-                <button type="submit" class="button button-fill">
-                    <span>New Contact </span>
-                    <img src="../img/new-contact-icon.png" class="tick-img">
+                <button class="button button-fill" onclick="showAddNewContactDialog()">
+                    <span>New Contact</span>
+                    <img src="../img/new-contact-icon.png" class="new-contact-img">
                 </button>
             </div>
             

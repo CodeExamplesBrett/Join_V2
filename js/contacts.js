@@ -51,16 +51,16 @@ function createAlphabetletters(uniqueLetters){
 function pushUserToLetter(uniqueLetters){
     for (let i = 0; i < users.length; i++) {
         let fullName = users[i].name + ' ' + users[i].lastName;
-        let email = users[i].email
-        let phone = users[i].password
-        let initials = users[i].initials
+        let initials = users[i].initials;
+        let email = users[i].email;
+        let phone = users[i].phone;
         let colorId = users[i].id % 10;
         let userLetter = users[i].name.charAt(0);
         for (let j = 0; j < uniqueLetters.length; j++) {
             const uniqueLetter = uniqueLetters[j];
             if(userLetter == uniqueLetter){
                 document.getElementById(`${uniqueLetter}`).innerHTML += /*html*/ `
-                <div class="contact-details" onclick="showFullDetails('${fullName}', '${initials}', '${colorId}', '${email}', '${phone}' )">
+                <div id="name-index-${i}" class="contact-details" onclick="showFullDetails('${i}','${fullName}', '${initials}','${email}', '${phone}', '${colorId}' )">
                     <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
                     <div class="full-name">${fullName}</div>
                 </div>
@@ -72,8 +72,10 @@ function pushUserToLetter(uniqueLetters){
     }
 }
 
-function showFullDetails(fullName, initials, colorId, email, phone){
+function showFullDetails(nameID, fullName, initials, email, phone, colorId){
     clearFullDetails();
+    toggleSelectionBackground(nameID);
+    
     document.getElementById("contact-full-details").innerHTML = /*html*/`
     <div class="name-title">
         <div style="background-color:var(--color-${colorId})" class="avatar avatar-large"><p class="initial-text initial-text-large">${initials}</p></div>
@@ -90,13 +92,22 @@ function showFullDetails(fullName, initials, colorId, email, phone){
         <span class="detail-headings">Phone</span>
         <span class="detail-phone">${phone}</span>
     </div>
-
     `
 }
+
+
+function toggleSelectionBackground(nameID){
+    for (let n = 0; n < users.length; n++) {
+        document.getElementById("name-index-" + n).classList.remove("blue-background");
+    }
+    document.getElementById("name-index-" + nameID).classList.add("blue-background");
+}
+
 
 function clearFullDetails(){
     document.getElementById("contact-full-details").innerHTML = ""
 }
+
 
 function clearContacts(){
     document.getElementById("contacts-container").innerHTML = ""
@@ -108,16 +119,18 @@ function addContact() {
     let password =document.getElementById("password");
     let name =document.getElementById("firstName");
     let lastName =document.getElementById("lastName");
+    let phone =document.getElementById("phone");
     //console.log(email);
     //console.log(password)
     checkId()
     getInitials(name, lastName);
-    makeUserJson(email, password, name, lastName);
+    makeUserJson(email, phone, password, name, lastName);
 
     setArray("user", users);
     console.log(tasks);
 
-    clear();               
+    clear(); 
+    hideAddNewContactDialog();              
 }
 
 function checkId(){
@@ -133,6 +146,15 @@ function checkId(){
     return setID = highestID + 1;
 }
 
+function showAddNewContactDialog(){
+    document.getElementById("bg-grey").classList.remove("dnone")
+}
+
+function hideAddNewContactDialog(){
+    clear();
+    document.getElementById("bg-grey").classList.add("dnone")
+}
+
 function getInitials(name, lastName){
     let fullName = name.value + ' ' + lastName.value
     const words = fullName.split(" "); // split the string into an array of words
@@ -142,9 +164,10 @@ function getInitials(name, lastName){
     //console.log(initials);
 }
 
-function makeUserJson(email, password, name, lastName){
+function makeUserJson(email, phone, password, name, lastName){
     users.push({
         email: email.value, 
+        phone: phone.value, 
         password: password.value, 
         name: name.value, 
         lastName: lastName.value,
@@ -155,6 +178,9 @@ function makeUserJson(email, password, name, lastName){
 
 function clear(){
     document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("firstName").value = "";
+    document.getElementById("lastName").value = "";
     document.getElementById("password").value = "";
 }
 

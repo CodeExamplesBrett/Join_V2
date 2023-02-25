@@ -13,9 +13,7 @@ body {
     display: none !important;
 }
 
-.responsive-d-none-990px {}
 
-.responsive-d-none-770px {}
 
 header {
     position: fixed;
@@ -166,7 +164,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     color: white;
-    z-index: 250;
+    z-index: 3;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
 }
 
