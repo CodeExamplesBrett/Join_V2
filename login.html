@@ -9,20 +9,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 <body onload="init('addTask-link'); loginSuccess()"> 
-    <h1>Login</h1>
-
-    <form onsubmit="login(event); return false;">
-        <label for="title" class="form-label">Email*</label>
-        <input type="text" id="email">
-
-        <label for="title" class="form-label">PW*</label>
-        <input type="text" id="password">
-
-        <button type="submit">Login</button>
+    <header>
+        <img src="./img/join-logo-white.png">
+        <div class="header-right">
+            <span class="header-right-text">Not a Join user ?</span>
+            <button type="submit" class="button button-fill">
+                <span>Sign up</span>
+            </button>
+        </div>
+    </header>
     
-    </form>
+
+    <div class="login-dialog">
+        <h1>Log in</h1>
+        <div class="border-bottom"></div>
+        <form onsubmit="login(event); return false;">
+            <input type="text" id="email" placeholder="Email">
+            <input type="text" id="password" placeholder="password">
+
+            <div class="forgot-text">
+                <span >Forgot my password</span>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="button button-fill log-in">
+                    <span>Log in</span>
+                </button>
+                <button class="button button-clear" onclick="guestLogin()">
+                    <span>Guest Log in</span>
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+    
 
     <div id='msgBox'>
         
