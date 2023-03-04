@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Join icon -->
-    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
-
-    <!--  link google fonts Roboto -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap"
-        rel="stylesheet">
-
     <script src="./js/mini_backend.js"></script>
-    <script src="./js/registration.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/summary.js"></script>
+    <script src="./js/registration.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 <body onload="init('addTask-link')"> 
-
-    <h1>Register</h1>
-
-    <form onsubmit="addUser(event); return false;">
-        <label for="title" class="form-label">Email*</label>
-        <input type="text" id="email">
-
-        <label for="title" class="form-label">PW*</label>
-        <input type="text" id="password">
-
-        <label for="title" class="form-label">Name*</label>
-        <input type="text" id="name">
-
-        <label for="title" class="form-label">Last Name*</label>
-        <input type="text" id="lastName">
-
-        <button type="submit">Register</button>
+    <header>
+        <img src="./img/join-logo-white.png">
+        
+    </header>
     
-    </form>
+
+    <div class="login-dialog">
+        <div class="sign-in-head">
+           <a href="./login.html"><img src="./img/blue-back-arrow.png"></a> 
+            <h1>Sign Up</h1>
+        </div>
+        
+        <div class="border-bottom"></div>
+        <form onsubmit="addUser(event); return false;">
+            <input type="text" id="email" placeholder="Email">
+            <input type="text" id="password" placeholder="password">
+            <input type="text" id="phone" placeholder="Phone">
+            <input type="text" id="name" placeholder="First Name">
+            <input type="text" id="lastName" placeholder="Last Name">
+
+            
+            <div class="button-container">
+                <button type="submit" class="button button-fill sign-up">
+                    <span>Sign Up</span>
+                </button>
+                
+            </div>
+
+        </form>
+
+    </div>
+    
+
+    <div id='msgBox'>
+        
+    </div>
     
 </body>
 </html>
-
-
-

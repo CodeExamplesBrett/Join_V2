@@ -7,10 +7,12 @@ function addUser(event){
     let password =document.getElementById("password");
     let name =document.getElementById("name");
     let lastName =document.getElementById("lastName");
+    let phone =document.getElementById("phone");
     //console.log(email);
     //console.log(password)
+    checkId();
     getInitials(name, lastName)
-    createUserJson(email, password, name, lastName);
+    createUserJson(email, phone, password, name, lastName);
     setArray("user", users);
     console.log(tasks);
 
@@ -32,13 +34,28 @@ function getInitials(name, lastName){
     //console.log(initials);
 }
 
-function createUserJson(email, password, name, lastName){
+function checkId(){
+    let highestID = 0
+    for (let i = 0; i < users.length; i++) {
+        let id = users[i].id;
+
+        if(id > highestID){
+            highestID = id;
+        }    
+    }
+    console.log('the hight', highestID);
+    return setID = highestID + 1;
+}
+
+function createUserJson(email, phone, password, name, lastName){
     users.push({email: email.value, 
+        phone: phone.value,
         password: password.value, 
-        name: name.value, lastName: 
-        lastName.value, 
+        name: name.value, 
+        lastName: lastName.value, 
         initials: initials,
-        img: './img/avatar.png'});
+        img: './img/avatar.png',
+        id: setID});
 }
 
 

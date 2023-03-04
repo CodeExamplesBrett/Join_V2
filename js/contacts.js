@@ -1,40 +1,44 @@
 UserFirstIntitial = [];
 
-async function getContacts(){
+
+//source refers to the place where the contact list will be displayed e.g the the id for innerHTML
+// either for contacts page or select user in add task
+async function getContacts(source){
     await init();
     //calcValues(); 
-    showContacts();
+    showContacts(source);
 }
 
 
-function showContacts(){
-    clearContacts();
+function showContacts(source){
+    clearContacts(source);
     //push first letter of first name into array "UserFirstIntitial"
     //push full name in array "allUsers"
     for (let i = 0; i < users.length; i++) {
         let userFirstLetter = users[i].name.charAt(0);
         UserFirstIntitial.push(userFirstLetter);
     }
-    sortArrays();  
+    sortArrays(source);  
 }
 
 
-function sortArrays(){
+function sortArrays(source){
     //sort array + filter first letter array for unique first letters
     UserFirstIntitial.sort();
     let uniqueLetters = UserFirstIntitial.filter((letter, i) => UserFirstIntitial.indexOf(letter) === i);
     console.log(uniqueLetters);
-    createAlphabetletters(uniqueLetters);
+    createAlphabetletters(uniqueLetters, source);
 }
 
 
-function createAlphabetletters(uniqueLetters){
+function createAlphabetletters(uniqueLetters, source){
        //Create divs for users with first letter as id -- add heading letter
     
        for (let i = 0; i < uniqueLetters.length; i++) {
         let displayLetter = uniqueLetters[i];
-        document.getElementById("contacts-container").innerHTML += /*html*/ `
-        <div class="alphabet-Letter">
+        //here source either 'contacts-container' or 'user-container'
+        document.getElementById(source).innerHTML += /*html*/ `
+        <div class="alphabet-Letter alphabet-letter-add-task">
             <div class="letter"><h2>${displayLetter}</h2></div>
             <div class="border-bottom"></div>
             <div class="displayLetter" id="${displayLetter}"></div> 
@@ -42,13 +46,13 @@ function createAlphabetletters(uniqueLetters){
         </div>
             `;    
     }
-    pushUserToLetter(uniqueLetters);
+    pushUserToLetter(uniqueLetters, source);
 }
 
 
 
 //If first letter of username is equal to the unique Letter put that user in the corresponding div
-function pushUserToLetter(uniqueLetters){
+function pushUserToLetter(uniqueLetters, source){
     for (let i = 0; i < users.length; i++) {
         let fullName = users[i].name + ' ' + users[i].lastName;
         let initials = users[i].initials;
@@ -59,17 +63,35 @@ function pushUserToLetter(uniqueLetters){
         for (let j = 0; j < uniqueLetters.length; j++) {
             const uniqueLetter = uniqueLetters[j];
             if(userLetter == uniqueLetter){
-                document.getElementById(`${uniqueLetter}`).innerHTML += /*html*/ `
-                <div id="name-index-${i}" class="contact-details" onclick="showFullDetails('${i}','${fullName}', '${initials}','${email}', '${phone}', '${colorId}' )">
-                    <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
-                    <div class="full-name">${fullName}</div>
-                </div>
-                `
+                if(source == "contacts-container"){
+                    // user list content for contacts page ... (different functions to add Task page)
+                    document.getElementById(`${uniqueLetter}`).innerHTML += /*html*/ `
+                    <div id="name-index-${i}" class="contact-details" onclick="showFullDetails('${i}','${fullName}', '${initials}','${email}', '${phone}', '${colorId}' )">
+                        <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
+                        <div class="full-name">${fullName}</div>
+                    </div>
+                    `} else if (source == "user-container"){
+                        // user list content for add Task page ... (different functions to contacts page )
+                        document.getElementById(`${uniqueLetter}`).innerHTML += /*html*/ `
+                        <div id="name-index-${i}" class="contact-details"  onclick="addUser(${i})">
+                            <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
+                            <div class="full-name">${fullName}</div>
+                            <!-- div for check symbol -->
+                        <div id="checked_${i}"></div>
+                        </div>
+
+                        
+                        
+                        `
+
+                    }
+                
             }
             
         }
         
     }
+    
 }
 
 function showFullDetails(nameID, fullName, initials, email, phone, colorId){
@@ -109,8 +131,8 @@ function clearFullDetails(){
 }
 
 
-function clearContacts(){
-    document.getElementById("contacts-container").innerHTML = ""
+function clearContacts(source){
+    document.getElementById(source).innerHTML = ""
 }
     
 
@@ -122,7 +144,7 @@ function addContact() {
     let phone =document.getElementById("phone");
     //console.log(email);
     //console.log(password)
-    checkId()
+    checkId();
     getInitials(name, lastName);
     makeUserJson(email, phone, password, name, lastName);
 

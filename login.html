@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/login.css">
 </head>
-<body onload="init('addTask-link'); loginSuccess()"> 
+<body onload="init('addTask-link')"> 
     <header>
         <img src="./img/join-logo-white.png">
         <div class="header-right">
             <span class="header-right-text">Not a Join user ?</span>
             <button type="submit" class="button button-fill">
-                <span>Sign up</span>
+                <a class="sign-up-link" href="./registration.html">Sign up</a>
             </button>
         </div>
     </header>
@@ -33,7 +33,7 @@
             <input type="text" id="password" placeholder="password">
 
             <div class="forgot-text">
-                <span >Forgot my password</span>
+                <!-- <span >Forgot my password</span> -->
             </div>
             <div class="button-container">
                 <button type="submit" class="button button-fill log-in">

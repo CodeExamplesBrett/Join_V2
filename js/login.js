@@ -13,12 +13,13 @@ verifyLogin(email, password);
 
 function guestLogin(){
     let email = 'guest@guestemail.com';
-    let password = '0000'
+    let password = '0000';
     verifyLogin(email, password);
 }
 
 function verifyLogin(email, password){
-    let user = users.find( u => u.email == email.value && u.password == password.value);
+    // .value for login .... just email  & just password for guest login
+    let user = users.find( u => u.email == email.value && u.password == password.value || u.email == email && u.password == password);
 console.log(user)
 if(user) {
     console.log('user found');
