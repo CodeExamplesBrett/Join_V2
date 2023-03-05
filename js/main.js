@@ -10,7 +10,8 @@ async function init(currentLink) {
 
   await includeHTML();
   //menuSelected(currentLink);
-  displayCurrentDate()
+  sortUsers();
+  displayCurrentDate();
 }
 
 async function includeHTML() {
@@ -28,18 +29,30 @@ async function includeHTML() {
 }
 
 
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
+function menuSelected(currentLink) {
+  document.getElementById(currentLink).classList.add("board-menu-highlight");
 }
 
 
-function menuSelected(currentLink) {
-  document.getElementById(currentLink).classList.add("board-menu-highlight");
+function sortUsers(){
+  users.sort((a, b) => {
+      // Compare first names
+      if (a.name < b.name) {
+        return -1;
+      } else if (a.name > b.name) {
+        return 1;
+      } else {
+        // If first names are the same, compare last names
+        if (a.lastName < b.lastName) {
+          return -1;
+        } else if (a.lastName > b.lastName) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+    });
+    console.log("Sorted users", users);
 }
 
 
@@ -53,9 +66,15 @@ function displayCurrentDate(){
   // only add current date to element "due-date" if it exists
   if(dateArea){
     dateArea.value = yyyy + '-' + mm + '-' + dd;
-  }
+  }  
+}
 
-  
+function logout(){
+  localStorage.clear(); 
+}
+
+function setLocal(key, array) {
+  localStorage.setItem(key, JSON.stringify(array));
 }
 
 

@@ -1,6 +1,5 @@
 UserFirstIntitial = [];
 
-
 //source refers to the place where the contact list will be displayed e.g the the id for innerHTML
 // either for contacts page or select user in add task
 async function getContacts(source){
@@ -18,11 +17,11 @@ function showContacts(source){
         let userFirstLetter = users[i].name.charAt(0);
         UserFirstIntitial.push(userFirstLetter);
     }
-    sortArrays(source);  
+    sortArray(source);  
 }
 
 
-function sortArrays(source){
+function sortArray(source){
     //sort array + filter first letter array for unique first letters
     UserFirstIntitial.sort();
     let uniqueLetters = UserFirstIntitial.filter((letter, i) => UserFirstIntitial.indexOf(letter) === i);
@@ -79,11 +78,7 @@ function pushUserToLetter(uniqueLetters, source){
                             <!-- div for check symbol -->
                         <div id="checked_${i}"></div>
                         </div>
-
-                        
-                        
                         `
-
                     }
                 
             }

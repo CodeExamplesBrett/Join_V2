@@ -1,3 +1,23 @@
+:root{
+    --color-high:#FF3D00;
+    --color-medium: #FFA800;
+    --color-low:#7AE229;
+    --color-Marketing: blue;
+    --color-Design: #FF7A00;
+    --color-Sales: #ec8ce4;
+  
+    --color-1:#0190E0;
+    --color-2:#EE00D6;
+    --color-3:#02CF2F;
+    --color-4:#FFA800;
+    --color-5:#9327FF;
+    --color-6:#FF5C00;
+    --color-7:#CB02CF;
+    --color-8:#AF1616;
+    --color-9:#462F8A;
+    --color-0:#007CEE;
+  }
+
 body {
     line-height: inherit;
 }

@@ -63,6 +63,9 @@ header span {
 }
 
 .pp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 46px;
     height: 46px;
     padding: 1px;
@@ -70,6 +73,19 @@ header span {
     border-radius: 559px;
     cursor: pointer;
 }
+
+.avatar-sidebar {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    background-color: #FF7A00;
+    border: 1px solid white;
+    /* object-fit: cover; */
+  }
 
 .profil-picture {
     width: 46px;
