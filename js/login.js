@@ -59,11 +59,6 @@ function setLocal(key, array) {
     localStorage.setItem(key, JSON.stringify(array));
   }
 
-  function clearOut(){
-    loggedUsers = []
-    setArray("loggedUser", loggedUsers);
-  }
-
   function setArray(key, array) {
     backend.setItem(key, JSON.stringify(array));
   }  

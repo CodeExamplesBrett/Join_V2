@@ -11,7 +11,7 @@ urgentTasksLength = ''
 async function getStats(){
     await init();
     calcValues(); 
-    dispayLoggedUser();
+    dispayLoggedUser('summary');
 }
 
 
@@ -121,22 +121,4 @@ function openBoardWindow(){
  }, 500)
  }
 
- function dispayLoggedUser(){
-    let localUserString = localStorage.getItem('loggedUser');
-    let currentLoggedUser = JSON.parse(localUserString);
-    
-    console.log(currentLoggedUser )
-    if(currentLoggedUser !== null){
-      let colorId = currentLoggedUser[0].id % 10;
-      let initials = currentLoggedUser[0].initials;
-      document.getElementById('userName').innerHTML = currentLoggedUser[0].fullName
-      document.getElementById('profil-picture').innerHTML = /*html*/ `
-        <div style="background-color:var(--color-${colorId})" class="avatar-sidebar"><p class="initial-text">${initials}</p></div>
-    `} else{
-         document.getElementById('userName').innerHTML = ""
-         document.getElementById('profil-picture').innerHTML = ""
-    }
-    
-    
-    
- }
+

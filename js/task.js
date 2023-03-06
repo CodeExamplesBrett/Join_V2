@@ -1,6 +1,7 @@
 async function showOverview() {
   await init('board-link');
   showCards();
+  dispayLoggedUser('task');
 }
 
 function showCards() {

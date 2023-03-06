@@ -2,6 +2,11 @@
 let selectUser = [];
 let UrgentUrlLink = ''
 
+async function checkLogin(){
+  await init();
+  dispayLoggedUser('addTask')
+
+}
 
 // jsdoc: npm install -g jsdoc
 

@@ -69,6 +69,23 @@ function displayCurrentDate(){
   }  
 }
 
+function dispayLoggedUser(sPage){
+  let localUserString = localStorage.getItem('loggedUser');
+  let currentLoggedUser = JSON.parse(localUserString);
+  console.log(currentLoggedUser )
+  if(currentLoggedUser !== null){
+    let colorId = currentLoggedUser[0].id % 10;
+    let initials = currentLoggedUser[0].initials;
+    document.getElementById('profil-picture').innerHTML = /*html*/ `
+      <div style="background-color:var(--color-${colorId})" class="avatar-sidebar"><p class="initial-text">${initials}</p></div>
+  `} if(currentLoggedUser !== null && sPage == 'summary'){
+      document.getElementById('userName').innerHTML = /*html*/ `
+      <div class="welcome-text">Welcome,</div>
+      <div class="logged-user-name">${currentLoggedUser[0].fullName}</div>
+      `
+  } 
+}
+
 function logout(){
   localStorage.clear(); 
 }

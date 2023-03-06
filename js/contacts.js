@@ -6,6 +6,7 @@ async function getContacts(source){
     await init();
     //calcValues(); 
     showContacts(source);
+    dispayLoggedUser('contacts');
 }
 
 
