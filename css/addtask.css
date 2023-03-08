@@ -113,10 +113,6 @@ select{
     object-fit: cover;
 }
 
-.avatar{
-    margin-left: -20px;
-}
-
 
 .avatar:hover{
     opacity: 0.6;
@@ -319,11 +315,18 @@ select{
     display: flex;
     align-items: center;
 }
+
 .added-user{
     display: flex; 
     flex-direction: column; 
     align-items: center;
 }
+
+.added-user *{
+    margin-left: -19px;
+}
+
+
 
 
 
@@ -335,13 +338,19 @@ select{
 
 
 
-@media(max-width: 870px) {
+@media(max-width: 960px) {
     .input-main{
         flex-direction: column;
     }
+
+    .heading{
+        margin-top: 0px !important;
+    }
+
     .input-right{
         margin-left: 0;
         width: 100%;
+        padding-top: 0px;
     }
     .input-left{
         width: 100%;

@@ -23,29 +23,9 @@ h5 {
     color: #2c2ca8;
 }
 
-.backlog-table {
-    color: #2c2ca8;
-    margin-top: 45px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 40px;
-}
 
-.table-project {
-    border-spacing: 0px;
-    width: 100%;
-    padding-right: 100px;
-}
 
-.priority {
-    font-size: 48px !important;
-    vertical-align: middle !important;
-    line-height: 0 !important;
-    margin-bottom: 3px;
-    display: flex;
-    justify-content: center;
-}
+
 
 
 /* .priority-con {
@@ -68,41 +48,6 @@ h5 {
 
 /* CODE von erste Tabelle im Textdocument */
 
-#new-task {
-    align-items: center;
-    background-color: #fbfbfb;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    /* border-left: 7px solid orange;     Standard JOIN Style */
-    border-radius: 10px;
-    cursor: pointer;
-
-}
-
-.task-profile {
-    margin: 5px;
-}
-
-.user-img {
-    height: 40px;
-    width: 40px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 3px;
-
-}
-
-
-
-
-
-.users-con {
-    text-align: center;
-}
-
-#backlogTask {
-    cursor: pointer;
-}
 
 .table tbody+tbody {
     border: 0px !important;
@@ -115,24 +60,7 @@ h5 {
 }
 
 
-.double_arrow_up {
-    font-size: 48px !important;
-    color: red;
-}
 
-#liveAlertBtn {
-    cursor: pointer;
-}
-
-.taskButton {
-    color: black;
-    font-size: 18px;
-
-}
-
-.taskButton a {
-    color: black;
-}
 
 table tr:hover {
 
@@ -150,21 +78,7 @@ table tr:hover {
     background-color: #f1f1ff !important;
 }
 
-#dialog-box {
-    align-items: center;
-    display: none;
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    justify-content: center;
-    top: 0;
-    padding-left: 200px;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-}
+
 
 
 
@@ -351,10 +265,7 @@ table tr:hover {
         font-size: 20px;
     }
 
-    .dialogb {
-        font-size: 15px;
-        width: 320px;
-    }
+    
 
     .dialog-table {
         width: 270px;

@@ -1,0 +1,86 @@
+:root{
+    --color-high:#FF3D00;
+    --color-medium: #FFA800;
+    --color-low:#7AE229;
+    --color-Marketing: blue;
+    --color-Design: #FF7A00;
+    --color-Sales: #ec8ce4;
+  
+    --color-1:#0190E0;
+    --color-2:#EE00D6;
+    --color-3:#02CF2F;
+    --color-4:#FFA800;
+    --color-5:#9327FF;
+    --color-6:#FF5C00;
+    --color-7:#CB02CF;
+    --color-8:#AF1616;
+    --color-9:#462F8A;
+    --color-0:#007CEE;
+  }
+
+h2{
+    font-weight: 400;
+    font-size: 19px;
+    padding-bottom: 6px;
+    margin-left: 25px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #FF7A00;
+    border: 1px solid white;
+    /* object-fit: cover; */
+  }
+
+.contact-details{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 16px;
+    border-radius: 10px;
+    width: 80%;
+    cursor: pointer;
+}
+
+.contact-details:hover{
+    background-color: rgba(0,0,0,0.04);
+}
+
+.contact-details:hover:nth-child(1){
+    transform: scale(0.99);
+}
+
+.displayLetter{
+    display: flex;
+    flex-direction: column;
+}
+
+.border-bottom{
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.full-name{
+    margin-left: 20px;
+}
+
+.contact-details:hover{
+    background-color: rgba(0,0,0,0.04);
+}
+
+.contact-details:hover:nth-child(1){
+    transform: scale(0.99);
+}
+
+.initial-text{
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    margin-left: 0px;
+  }
