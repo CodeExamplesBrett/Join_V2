@@ -29,9 +29,9 @@ if(user) {
     createLoggedUserJson(email, user);
     console.log("LoggedIn", loggedUsers);
     clearForm();
-    //setTimeout(function () {
-    //    window.location.href = "summary.html";
-    //}, 1000)
+    setTimeout(function () {
+        window.location.href = "summary.html";
+    }, 1000)
 
 } else {
     console.log('user name or password invalid')

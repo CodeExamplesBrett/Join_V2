@@ -43,7 +43,7 @@
     <!--Include menu div-->
     <div w3-include-html="./html_templates/sidebar.html"></div>
     <!--Main div with margin from menu and top-->
-    <div class="main">
+    <div class="main" onclick="hideLogOut()">
         <div class="heading">
             <h1>Summary</h1>
             <p class="slogan-text">Everything in a nutshell!</p>
@@ -109,13 +109,7 @@
 
         <!--Right side of form-->
         <div class="input-right">
-            <div id="userName">
-                
-
-            </div>
-            <button onclick="logout()">logout</button>
-
-
+            <div id="userName"></div>
         </div>
     </div>
 </body>

@@ -124,20 +124,4 @@ function backlogTableHTML(i, colorOfUrgency) {
 
 
 
-// From addTasks.js  ... showUser function
-function addUserDataToDialogbox(i, userName, userImg){
-    return /*html*/ `
-    <!-- <div class="individualUser" onclick="addUser(${i}, '${userName}')"> -->
-    <div class="individualUser" onclick="addUser(${i})">
-        <div class="user-show-box">
-          <img class="avatar" src="${userImg}">
-          <div class="userDetails">
-            <span class="userName">${userName}</span>
-         </div>
-        </div>
-        
-       <!-- div for check symbol -->
-       <div id="checked_${i}"></div>
-    </div>`;
 
-}

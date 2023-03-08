@@ -73,11 +73,13 @@ function pushUserToLetter(uniqueLetters, source){
                     `} else if (source == "user-container"){
                         // user list content for add Task page ... (different functions to contacts page )
                         document.getElementById(`${uniqueLetter}`).innerHTML += /*html*/ `
-                        <div id="name-index-${i}" class="contact-details"  onclick="addUser(${i})">
-                            <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
-                            <div class="full-name">${fullName}</div>
+                        <div id="name-index-${i}" class="contact-details cd-addtask"  onclick="addUser(${i})">
+                            <div class="name-symbol">
+                                <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
+                                <div class="full-name">${fullName}</div>
+                            </div>
                             <!-- div for check symbol -->
-                        <div id="checked_${i}"></div>
+                            <div id="checked_${i}"></div>
                         </div>
                         `
                     }

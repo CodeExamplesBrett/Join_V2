@@ -86,6 +86,16 @@ function dispayLoggedUser(sPage){
   } 
 }
 
+function showLogOut(){
+  document.getElementById("log-out").classList.toggle('d-none')
+}
+
+
+function hideLogOut(){
+  document.getElementById("log-out").classList.add('d-none')
+}
+
+
 function logout(){
   localStorage.clear(); 
 }
