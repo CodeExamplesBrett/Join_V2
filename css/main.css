@@ -61,11 +61,11 @@ body {
 }
 
 
-@media (max-width: 870px) {
+@media (max-width: 960px) {
 
     .main {
         margin-left: 0;
-        margin-top: 140px;
+        margin-top: 0px;
     }
     
 
