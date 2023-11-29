@@ -1,4 +1,7 @@
-setURL('https://brett-scott.developerakademie.net/Modul_10/smallest_backend_ever/');
+//setURL('https://brett-scott.developerakademie.net/Modul_10/smallest_backend_ever/');
+setURL('https://brett--scott.com/Join/smallest_backend_ever/');
+
+
 
 async function init(currentLink) {
   await downloadFromServer();
