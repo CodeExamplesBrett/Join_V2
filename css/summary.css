@@ -289,14 +289,27 @@ h1{
         flex-direction: column;
     }
     .input-right{
-        margin-left: 0;
-        width: 100%;
+        display: none;
     }
     .input-left{
-        width: 100%;
+        width: 360px;
     }
     .head-text{
         margin-top: 146px;
+    }
+    .row{
+        margin-top: 20px;
+        margin-left: 0; 
+        display: flex;
+        justify-content: space-between; 
+    }
+
+    .task-nr{
+        margin-right: 10px;
+    }
+
+    .todo-container{
+        margin-right: 0px;
     }
     .main{
         margin-left: 12px !important;
@@ -304,8 +317,91 @@ h1{
     }
     .heading{
         margin-bottom: 10px;
+        display: block;
+        margin-top: 120px;
+    }
+    h1{
+        margin-bottom: 10px;
+    }
+    .slogan-text{
+        margin-left: 0;
+        margin-top: 10px;
     }
     
+ }
+
+ @media(max-width: 430px) {
+    .input-left{
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    .row{
+        display: flex;
+        justify-content: space-between; 
+    }
+
+    .task-nr{
+        margin-right: 0px;
+        width: 90px;
+        height: 90px;
+    }
+
+    .urgent-nr{
+        width: 100%;
+        height: 90px;
+    }
+
+    .todo-container{
+        height: 90px;
+    }
+
+    .task-nr-bottom{
+        height: 90px;
+    }
+
+    #Task-tot{
+        height: 90px;
+    }
+
+    .count{
+        font-size: 40px;
+    }
+
+    .count-descr{
+        font-size: 11px;
+    }
+
+    .heading{
+        padding-left: 0px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .slogan-text{
+        padding-left: 0px;
+        border-left: 0px;
+        border-bottom: 2px solid #29ABE2
+    }
+
+    h1{
+        padding-right: 0px;
+        margin-top: 0px;
+        font-size: 50px;
+    }
+
+
+ }
+
+ @media(max-height: 750px){
+    .slogan-text{
+        margin-bottom: 0px;
+    }
+
+    .heading{
+        margin-top: 10px;
+    }
  }
 
 

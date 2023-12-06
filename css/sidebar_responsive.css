@@ -160,7 +160,7 @@
 }
 
 
-@media(max-width: 360px) {
+@media(max-width: 440px) {
     nav {
         height: 80px;
     }

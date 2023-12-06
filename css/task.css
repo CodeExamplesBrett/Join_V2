@@ -331,3 +331,23 @@ color: rgba(0,0,0, 0.7);
 
 
 }
+
+@media (max-width: 440px){
+  .category {
+    min-height: 0px;
+    margin-right: 16px;
+    width: auto;
+  }
+
+  .columns{
+    flex-direction: column;
+  }
+
+  .main{
+    margin-right: 0px
+  }
+
+  .task-each-category{
+    width: fit-content;
+  }
+}
