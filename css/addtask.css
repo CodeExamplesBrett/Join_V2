@@ -441,6 +441,18 @@ select{
  }
  }
 
+ @media(max-width: 440px){
+    .container-outer {
+        transform: scale(0.8);
+    }
+ }
+
+
+
+  
+
+    
+
 
  
 

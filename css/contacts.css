@@ -31,6 +31,8 @@ form input{
 
 .container{
     display: flex;
+    position: relative;
+    height: 100vh;
 }
 
 .contacts-container{
@@ -194,7 +196,6 @@ form input{
 .new-contact-container{
     display: flex;
     justify-content: flex-end;
-    
 }
 
 .name-title{
@@ -323,4 +324,206 @@ form input{
     border-bottom: 2.5px solid #29ABE2;
     margin-right: 207px;
     margin-top: 5px;
+}
+
+.back-arrow {
+    top: 17px;
+    display: none;
+}
+
+.new-contact-container-left{
+    display: none;
+}
+
+
+@media (max-width: 1200px){
+    h1{
+        margin: 10px 0px;
+    }
+
+    .heading-contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+    }
+
+    .slogan-text {
+        margin-left: 0px; 
+        margin: 10px 0px;
+    }
+
+    .new-contact-container {
+    position: absolute;
+    right: 20px;
+    }
+}
+
+@media (max-width: 700px){
+    .new-contact-container {
+        display: none;
+    }
+}
+
+
+@media (max-width: 440px){
+    body{
+        overflow: hidden;
+    }
+    .right-side{
+        display: none;
+    }
+
+    .right-side-visible {
+        display: block; /* Override display property when the class is added */
+    }
+
+    .contacts-container{
+        width: 100%;
+        height: calc(100vh - 176px);
+    }
+
+    .alphabet-Letter{
+        margin-left: 20px;
+    }
+
+    .contact-full-details-active {
+        display: block; /* Show only when a contact is clicked */
+    }
+
+    /* Add styling for your back arrow here */
+    .back-arrow {
+        top: 17px;
+        display: none; /* Initially hidden */
+        /* Style as needed */
+    }
+
+    .back-arrow-visible {
+        display: block; /* Show when in details view */
+        position: absolute;
+        top: -1px;
+        right: 20px;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .heading-contacts{
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h1{
+        font-size: 35px;
+        margin: 0px;
+    }
+    p{
+        margin: 0px;
+    }
+
+    .slogan-text{
+        border-bottom: 2px solid #29ABE2;
+        border-left: none;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+    .avatar-large {
+        height: 60px !important;
+        width: 60px !important;
+    }
+
+    .initial-text-large {
+        font-size: 28px !important;
+    }
+
+    .full-name-detail{
+        font-size: 25px;
+        margin-left: 20px;
+    }
+
+    .detail-headings { 
+        margin: 10px 0px;  
+    }
+
+    .info-heading {
+        margin: 17px 0px;
+    }
+
+    .new-contact-container{
+        display: none;
+    }
+
+    .new-contact-container-left{
+    display: block;
+    position: absolute;
+    bottom: 180px;
+    right: 20px;
+    }
+
+
+    .add-contact-text{
+        display: none;
+    }
+
+    .new-contact-img{
+        margin-left: 0px;
+    }
+
+    .button{
+        border-radius: 50%;
+    }
+
+    .add-contact-container{
+        flex-direction: column;
+        transform: scale(0.6);
+        position: relative;
+    }
+
+    .left-join-icon {
+        display: none;
+    }
+
+    .add-contact-avatar {
+        position: absolute;
+        top: 240px;
+        left: 170px;
+    }
+
+    .add-contact-left {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        background-color: #2A3647;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 0px;
+        
+    }
+
+    .add-contact-right{
+        width: 530px;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 0px;
+    }
+
+    .button-respons-squre{
+        border-radius: 10%;
+        margin-bottom: 20px;
+    }
+
+    form{
+        margin-left: 90px;
+        margin-top: 40px;
+    }
+
+    .close-button {
+        top: -278px;
+        right: -465px;
+        height: 26px;
+        background-color: #2A3647;
+        height: 50px;
+    }
 }

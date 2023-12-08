@@ -70,6 +70,7 @@ function pushUserToLetter(uniqueLetters, source){
                         <div style="background-color:var(--color-${colorId})" class="avatar"><p class="initial-text">${initials}</p></div>
                         <div class="full-name">${fullName}</div>
                     </div>
+                    
                     `} else if (source == "user-container"){
                         // user list content for add Task page ... (different functions to contacts page )
                         document.getElementById(`${uniqueLetter}`).innerHTML += /*html*/ `
@@ -113,6 +114,26 @@ function showFullDetails(nameID, fullName, initials, email, phone, colorId){
         <span class="detail-phone">${phone}</span>
     </div>
     `
+    // Toggle view for small screens
+    if (window.innerWidth <= 440) {
+        document.getElementById("contacts-container").style.display = "none"; // Hide contacts list
+        let rightSide = document.getElementById("contact-full-details");
+        rightSide.classList.add("contact-full-details-active"); // Show contact details
+        document.querySelector(".back-arrow").classList.add("back-arrow-visible"); // Show back arrow
+        document.querySelector(".right-side").classList.add("right-side-visible"); // Make right side visible
+    }
+
+}
+
+function hideFullDetails() {
+    // Hide contact details and show contacts list
+    if (window.innerWidth <= 440) {
+        document.getElementById("contacts-container").style.display = "block";
+        let rightSide = document.getElementById("contact-full-details");
+        rightSide.classList.remove("contact-full-details-active");
+        document.querySelector(".back-arrow").classList.remove("back-arrow-visible");
+        document.querySelector(".right-side").classList.remove("right-side-visible"); // Make right side hidden
+    }
 }
 
 
