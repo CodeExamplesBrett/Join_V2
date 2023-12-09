@@ -155,7 +155,7 @@ function clearContacts(source){
 }
     
 
-function addContact() {
+async function  addContact() {
     let email =document.getElementById("email");
     let password =document.getElementById("password");
     let name =document.getElementById("firstName");
@@ -167,11 +167,19 @@ function addContact() {
     getInitials(name, lastName);
     makeUserJson(email, phone, password, name, lastName);
 
-    setArray("user", users);
-    console.log(tasks);
 
+    try {
+        await setArray("user", users);
+        console.log(tasks);
+    } catch (error) {
+        console.error("Error saving contact:", error);
+        // Handle error (e.g., display an error message to the user)
+        return; // Exit the function to avoid reloading if there's an error
+    }
+    
     clear(); 
-    hideAddNewContactDialog();              
+    hideAddNewContactDialog();  
+    location.reload();           
 }
 
 function checkId(){
@@ -226,6 +234,6 @@ function clear(){
 }
 
 function setArray(key, array) {
-    backend.setItem(key, JSON.stringify(array));
+    return backend.setItem(key, JSON.stringify(array));
   }
     

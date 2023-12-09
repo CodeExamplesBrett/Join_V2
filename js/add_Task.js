@@ -101,7 +101,7 @@ function createTaskJSON(title, category, description, date, urgency){
 // opens next paqe in process
 function openBacklogWindow(){
  setTimeout(function () {
-    window.location.href = "backlog.html";
+    window.location.href = "task.html";
 }, 1000)
 }
 
