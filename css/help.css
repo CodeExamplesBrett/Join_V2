@@ -1,71 +1,61 @@
-.help-main {
-    padding-left: 220px;
+.heading{
+    padding-left: 40px;
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
 }
 
-h1 {
-    margin-top: 21px !important;
-    font-size: 35px !important;
-    margin: 0;
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: bold;
+
+h1{
+    font-size: 61px;
+    font-weight: 700;
+    padding-right: 40px; 
 }
 
-h5 {
-    font-size: 16px !important;
-    margin: 0 !important;
+.help-page {
+    max-width: 800px;
 }
 
-.headline {
-    color: #2c2ca8;
-    padding-bottom: 41px;
+
+
+.help-page h2 {
+    color: #555;
+    margin-top: 1em;
 }
 
-.question-con {
-    padding-top: 50px;
+.help-page h3 {
+    color: #777;
+    margin-top: 0.5em;
 }
 
-.toggles {
-    padding-top: 50px;
+.help-page ul {
+    list-style-type: disc;
+    margin-left: 20px;
 }
 
-.toggles a::before{
-    float: left;
-    position: relative;
-    margin: 0 -36px 0;
-    color: #e42313;
-    font-family: "cc-font";
-    /* content: "\65"; */
-    font-size: 32px;
-    transition: all 0.3s;
+.help-page p, .help-page li {
+    color: #333;
+    margin-bottom: 0.5em;
 }
 
-.question {
-    display: none;
-}
-.mystyle {
-    display: block;
-    width: 100%;
-    padding: 25px;
-    background-color: coral;
-    color: white;
-    font-size: 25px;
-  }
-
-
-
-@media (max-width: 870px) {
-
-    .help-main {
-        padding-left: 10px;
+@media(max-width: 900px){
+    .help-page {
+        max-width: 500px;
     }
-
-    .headline-help {
-        padding-top: 115px;
-    }
-    
-    h1 {
-        font-size: 35px !important;
-    }
-
-
 }
+
+@media(max-width: 570px){
+    .help-page {
+        max-width: 350px;
+    }
+}
+
+@media(max-width: 380px){
+    .help-page {
+        max-width: 250px;
+    }
+}
+
+
+
+
