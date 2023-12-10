@@ -66,15 +66,15 @@ function handleCreateTask() {
 // creates url path for urgentcy images global variable "UrgentUrlLink" then added to task Json
 function setUrlForPriorityLabel(){
   if(urgency.value == 'high'){
-    console.log('high')
+    //console.log('high')
     UrgentUrlLink = './img/arrow_urgent.svg'
   } 
   if(urgency.value == 'medium'){
-    console.log('medium')
+    //console.log('medium')
     UrgentUrlLink = './img/medium.svg'
   } 
   if(urgency.value == 'low'){
-    console.log('high')
+    //console.log('high')
     UrgentUrlLink = './img/arrow_low.svg'
   } 
 }
@@ -94,22 +94,26 @@ function createTaskJSON(title, category, description, date, urgency){
     user: selectUser
   };
   pushTaskToServerJSON(task);
-  openBacklogWindow();
+  
 }
 
-
-// opens next paqe in process
-function openBacklogWindow(){
- setTimeout(function () {
-    window.location.href = "task.html";
-}, 1000)
-}
 
 // Pushes this JSON into array "tasks"  then pushes this array to Json database on the server
-function pushTaskToServerJSON(task){
+async function pushTaskToServerJSON(task){
   tasks.push(task);
-  setArray("tasks", tasks);
-  console.log(tasks);
+
+  try {
+    await setArray("tasks", tasks);
+    console.log(tasks);
+} catch (error) {
+    console.error("Error saving contact:", error);
+    // Handle error (e.g., display an error message to the user)
+    return; // Exit the function to avoid reloading if there's an error
+}
+// opens next paqe in process
+window.location.href = "task.html";
+  //setArray("tasks", tasks);
+  //console.log(tasks);
 }
 
 /**
@@ -166,7 +170,7 @@ function showConfirmationText() {
 function addUser(i) {
   // All details of selected user i in new array "userInfo" (the selected users)
   let userInfo = users[i];
-  console.log('userInfo', userInfo)
+  //console.log('userInfo', userInfo)
   //name of selected user in dialig box
   let userFullName = users[i].name + ' ' + users[i].lastName;
 
@@ -177,11 +181,11 @@ function addUser(i) {
     // user exists then the user will be spliced out of the array..
     if (userFullName == selection.name + ' ' + selection.lastName) {
       selectUser.splice(i, 1);
-      console.log('removed', selectUser)
+      //console.log('removed', selectUser)
       //ticks shown next to selected users
       showCheckUp();
 
-      console.log("User würde schon hinzugefügt");
+      //console.log("User würde schon hinzugefügt");
       loadImages();
       
       //return used here ...when if statement is true then return exits the function 
@@ -193,7 +197,7 @@ function addUser(i) {
   //this will be the user array to be added to the task in function "createTaskJSON"
   selectUser.push(userInfo);
 
-  console.log('selectUser', selectUser);
+  //console.log('selectUser', selectUser);
   
   loadImages();
   showCheckUp();
@@ -271,7 +275,7 @@ function closeUserDialog() {
  * @param {array} array
  */
 function setArray(key, array) {
-  backend.setItem(key, JSON.stringify(array));
+  return backend.setItem(key, JSON.stringify(array));
 }
 
 
