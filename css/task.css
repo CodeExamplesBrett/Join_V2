@@ -288,6 +288,13 @@ color: rgba(0,0,0, 0.7);
   display: none;
 }
 
+@media (max-width: 1200px){
+  #dialog-box{
+    justify-content: flex-start;
+    margin-left: 200px;
+  }
+}
+
 @media (max-width: 960px){
 
   h1{
@@ -329,8 +336,27 @@ color: rgba(0,0,0, 0.7);
     margin-top: 5px;
   }
 
+  .dialog-detail-text{
+    font-size: 17px;
+  }
+
 
 }
+
+@media (max-width: 770px){
+  #dialog-box{
+    justify-content: flex-start;
+    margin-left: 0px;
+    padding-left: 100px;
+  }
+
+  .dialogb{
+    width: 275px;
+  }
+
+  
+}
+
 
 @media (max-width: 440px){
   .category {
@@ -354,4 +380,22 @@ color: rgba(0,0,0, 0.7);
   h1{
     font-size: 50px;
   }
+
+  #dialog-box{
+    justify-content: flex-start;
+    margin-left: 0px;
+    padding-left: 20px;
+  }
+
+  .dialogb{
+    width: 230px;
+  }
+
+  .columns{
+    margin-bottom: 88px;
+  }
+  
+  
+
+  
 }

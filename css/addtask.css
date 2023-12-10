@@ -10,9 +10,9 @@ h1{
 }
 
 input{
-    height: 39px;
+    height: 27px;
     padding: 13px 21px;
-    font-size: 22px;
+    font-size: 18px;
     border: 1px solid #d1d1d1;
     border-radius: 10px;
     resize: none;
@@ -26,7 +26,7 @@ textarea{
     margin-bottom: 34px;
     height: 90px;
     padding: 18px 21px;
-    font-size: 22px;
+    font-size: 18px;
     border: 1px solid #d1d1d1;
     border-radius: 10px;
     resize: none;
@@ -39,7 +39,7 @@ select{
     margin-bottom: 34px;
     height: 55px;
     padding: 0px 21px;
-    font-size: 22px;
+    font-size: 18px;
     border: 1px solid #d1d1d1;
     border-radius: 10px;
     resize: none;
@@ -108,7 +108,7 @@ select{
     color: #757D90;
     font-weight: 400;
     margin-bottom: 8px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .avatar{

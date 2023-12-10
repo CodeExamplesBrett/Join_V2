@@ -26,7 +26,7 @@ function sortArray(source){
     //sort array + filter first letter array for unique first letters
     UserFirstIntitial.sort();
     let uniqueLetters = UserFirstIntitial.filter((letter, i) => UserFirstIntitial.indexOf(letter) === i);
-    console.log(uniqueLetters);
+    //console.log(uniqueLetters);
     createAlphabetletters(uniqueLetters, source);
 }
 

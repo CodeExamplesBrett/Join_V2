@@ -76,7 +76,7 @@ function overlayTaskHTML(i) {
             </div>
         <button class="category-btn" onclick="moveToCategoryButton(${i}, 'todo')">to do</button>
         <button class="category-btn" onclick="moveToCategoryButton(${i}, 'inProgress')">In Progress</button>
-        <button class="category-btn" onclick="moveToCategoryButton(${i}, 'testing')">Testing</button>
+        <button class="category-btn" onclick="moveToCategoryButton(${i}, 'testing')">Feedback</button>
         <button class="category-btn" onclick="moveToCategoryButton(${i}, 'done')">Done</button>
     </div>
     

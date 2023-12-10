@@ -46,20 +46,20 @@ function calcUrgent(){
     let urgentTasksLength = urgentTasks.length;
     
 
-    console.log('Nr tasks', urgentTasksLength)
-    console.log('urgent', urgentTasks)
+    //console.log('Nr tasks', urgentTasksLength)
+    //console.log('urgent', urgentTasks)
 
 
     if(urgentTasksLength == 0){
     dueDate = 'No Urgent Tasks';
-    console.log('None', dueDate);
+    //console.log('None', dueDate);
     } else {
         for (let i = 0; i < urgentTasks.length; i++) {
             //let urgentTask = urgentTasks[i];
             let dueDate = urgentTasks[i]["date"];
-            console.log('date', dueDate);
+            //console.log('date', dueDate);
             dueDates.push(dueDate);
-            console.log('Duedates Array',dueDates)
+            //console.log('Duedates Array',dueDates)
           }
         findNearestDate(dueDates);
 
@@ -87,7 +87,7 @@ function findNearestDate(dueDates) {
       }
       
     }
-    console.log('near_Date', nearestDate);
+    //console.log('near_Date', nearestDate);
     formatMonth(nearestDate);
     //return nearestDate;
     
@@ -100,9 +100,9 @@ function findNearestDate(dueDates) {
     let outputMonth = months[monthIndex];
     let outputDay = date.getDate();
     let outputYear = date.getFullYear();
-    console.log('full month', outputMonth);
-    console.log('full day', outputDay);
-    console.log('full year', outputYear);
+    //console.log('full month', outputMonth);
+    //console.log('full day', outputDay);
+    //console.log('full year', outputYear);
 
     displayMostUrgentDate(outputMonth, outputDay, outputYear);
   }

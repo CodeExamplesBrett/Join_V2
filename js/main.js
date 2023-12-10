@@ -8,8 +8,8 @@ async function init(currentLink) {
   tasks = JSON.parse(backend.getItem('tasks')) || [];
   users = JSON.parse(backend.getItem('user')) || [];
 
-  console.log('tasks', tasks);
-  console.log('users', users);
+  //console.log('tasks', tasks);
+  //console.log('users', users);
 
   await includeHTML();
   //menuSelected(currentLink);
@@ -55,7 +55,7 @@ function sortUsers(){
         }
       }
     });
-    console.log("Sorted users", users);
+    //console.log("Sorted users", users);
 }
 
 
@@ -75,7 +75,7 @@ function displayCurrentDate(){
 function dispayLoggedUser(sPage){
   let localUserString = localStorage.getItem('loggedUser');
   let currentLoggedUser = JSON.parse(localUserString);
-  console.log(currentLoggedUser )
+  //console.log(currentLoggedUser )
   if(currentLoggedUser !== null){
     let colorId = currentLoggedUser[0].id % 10;
     let initials = currentLoggedUser[0].initials;

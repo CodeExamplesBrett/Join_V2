@@ -283,7 +283,11 @@ form input{
     border-top-right-radius: 30px;
 }
 
-.close-button{
+.close-button-white{
+    display: none;
+}
+
+.close-button-blue{
     position: relative;
     top: -47px;
     right: -371px;
@@ -519,9 +523,14 @@ form input{
         margin-top: 40px;
     }
 
-    .close-button {
-        top: -278px;
-        right: -465px;
+    .close-button-blue {
+        display: none;
+    }
+    .close-button-white{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        display: block;
         height: 26px;
         background-color: #2A3647;
         height: 50px;
