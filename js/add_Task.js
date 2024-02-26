@@ -1,4 +1,3 @@
-//test comment
 //empty array for selected users, from all users dialog
 let selectUser = [];
 let UrgentUrlLink = ''
