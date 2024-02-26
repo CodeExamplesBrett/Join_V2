@@ -1,4 +1,4 @@
-//empty array for selected users, from all users dialog  test
+//empty array for selected users, from all users dialog
 let selectUser = [];
 let UrgentUrlLink = ''
 
